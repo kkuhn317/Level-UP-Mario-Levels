@@ -1,0 +1,1968 @@
+fileFormatVersion: 2
+guid: 8d642c5f8dc53474780e65c0391603bd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4721530592129389902
+    second: MarioMakerTileset_0
+  - first:
+      213: -9040095398063270158
+    second: MarioMakerTileset_1
+  - first:
+      213: -9121433833757951447
+    second: MarioMakerTileset_2
+  - first:
+      213: -906479314556387970
+    second: MarioMakerTileset_3
+  - first:
+      213: -5746091184337279949
+    second: MarioMakerTileset_4
+  - first:
+      213: -4011552184755278447
+    second: MarioMakerTileset_5
+  - first:
+      213: 5812559797341566094
+    second: MarioMakerTileset_6
+  - first:
+      213: 3298186972786462405
+    second: MarioMakerTileset_7
+  - first:
+      213: 1404833664721564340
+    second: MarioMakerTileset_8
+  - first:
+      213: -8944077517360761568
+    second: MarioMakerTileset_9
+  - first:
+      213: -7391230959720105108
+    second: MarioMakerTileset_10
+  - first:
+      213: 2051680350431171201
+    second: MarioMakerTileset_11
+  - first:
+      213: 3472301403241558160
+    second: MarioMakerTileset_12
+  - first:
+      213: 3240691919651246264
+    second: MarioMakerTileset_13
+  - first:
+      213: 6213510079373799943
+    second: MarioMakerTileset_14
+  - first:
+      213: 5240804025172089770
+    second: MarioMakerTileset_15
+  - first:
+      213: 8938834591348296496
+    second: MarioMakerTileset_16
+  - first:
+      213: -7760130628214620570
+    second: MarioMakerTileset_17
+  - first:
+      213: -6207277142654769758
+    second: MarioMakerTileset_18
+  - first:
+      213: 8432749750594421050
+    second: MarioMakerTileset_19
+  - first:
+      213: 8565110656788983341
+    second: MarioMakerTileset_20
+  - first:
+      213: 3461538217077895805
+    second: MarioMakerTileset_21
+  - first:
+      213: 95606715986336854
+    second: MarioMakerTileset_22
+  - first:
+      213: -8075154720856683620
+    second: MarioMakerTileset_23
+  - first:
+      213: -2795715130790752660
+    second: MarioMakerTileset_24
+  - first:
+      213: -7083916696419147146
+    second: MarioMakerTileset_25
+  - first:
+      213: -3668242620280054764
+    second: MarioMakerTileset_26
+  - first:
+      213: 6026974598550635948
+    second: MarioMakerTileset_27
+  - first:
+      213: -7638642431836391141
+    second: MarioMakerTileset_28
+  - first:
+      213: 1779366765909380870
+    second: MarioMakerTileset_29
+  - first:
+      213: 7788405470474411704
+    second: MarioMakerTileset_30
+  - first:
+      213: -6168432034386856557
+    second: MarioMakerTileset_31
+  - first:
+      213: 6654068186361674573
+    second: MarioMakerTileset_32
+  - first:
+      213: 5317399412145535031
+    second: MarioMakerTileset_33
+  - first:
+      213: -3661946494369812802
+    second: MarioMakerTileset_34
+  - first:
+      213: 2595872283989202731
+    second: MarioMakerTileset_35
+  - first:
+      213: 3722145793061478274
+    second: MarioMakerTileset_36
+  - first:
+      213: 6030730255821730257
+    second: MarioMakerTileset_37
+  - first:
+      213: 6092808072361998504
+    second: MarioMakerTileset_38
+  - first:
+      213: -1332596703023219087
+    second: MarioMakerTileset_39
+  - first:
+      213: 6758412335029193586
+    second: MarioMakerTileset_40
+  - first:
+      213: 402651002260812824
+    second: MarioMakerTileset_41
+  - first:
+      213: 1709364995543205254
+    second: MarioMakerTileset_42
+  - first:
+      213: -6480353525027915325
+    second: MarioMakerTileset_43
+  - first:
+      213: -1815752116186237976
+    second: MarioMakerTileset_44
+  - first:
+      213: -760278361872958522
+    second: MarioMakerTileset_45
+  - first:
+      213: 9033516597244438737
+    second: MarioMakerTileset_46
+  - first:
+      213: 2572313652857451194
+    second: MarioMakerTileset_47
+  - first:
+      213: 6902921223886426417
+    second: MarioMakerTileset_48
+  - first:
+      213: -5405537337785143571
+    second: MarioMakerTileset_49
+  - first:
+      213: 4258384018716329230
+    second: MarioMakerTileset_50
+  - first:
+      213: -6478340796012857788
+    second: MarioMakerTileset_51
+  - first:
+      213: 5709922748045512771
+    second: MarioMakerTileset_52
+  - first:
+      213: -7772098736377072501
+    second: MarioMakerTileset_53
+  - first:
+      213: -1116917342272088053
+    second: MarioMakerTileset_54
+  - first:
+      213: 5746288163035426989
+    second: MarioMakerTileset_55
+  - first:
+      213: 9215379330374165799
+    second: MarioMakerTileset_56
+  - first:
+      213: 17443522450669529
+    second: MarioMakerTileset_57
+  - first:
+      213: -2431503340050754995
+    second: MarioMakerTileset_58
+  - first:
+      213: -3268390053161716032
+    second: MarioMakerTileset_59
+  - first:
+      213: 5535632122479752451
+    second: MarioMakerTileset_60
+  - first:
+      213: -6014725108142764480
+    second: MarioMakerTileset_61
+  - first:
+      213: 6174631902019965499
+    second: MarioMakerTileset_62
+  - first:
+      213: 5596357040246381994
+    second: MarioMakerTileset_63
+  - first:
+      213: -7789262477467796169
+    second: MarioMakerTileset_64
+  - first:
+      213: 1678046561435024408
+    second: MarioMakerTileset_65
+  - first:
+      213: -8090210482906842679
+    second: MarioMakerTileset_66
+  - first:
+      213: 4053310592194936899
+    second: MarioMakerTileset_67
+  - first:
+      213: -5394704431926048002
+    second: MarioMakerTileset_68
+  - first:
+      213: 6900468908939031178
+    second: MarioMakerTileset_69
+  - first:
+      213: -4209273409856733270
+    second: MarioMakerTileset_70
+  - first:
+      213: 3475411564362036613
+    second: MarioMakerTileset_71
+  - first:
+      213: -6193415382051356434
+    second: MarioMakerTileset_72
+  - first:
+      213: 1079488117329828771
+    second: MarioMakerTileset_73
+  - first:
+      213: -8910043779301899751
+    second: MarioMakerTileset_74
+  - first:
+      213: -4689456274439375579
+    second: MarioMakerTileset_75
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MarioMakerTileset_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 184
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e45130cce0f368140800000000000000
+      internalID: 4721530592129389902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_1
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 184
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f69bc6c1212b8280800000000000000
+      internalID: -9040095398063270158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_2
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 184
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92ab0a071482a6180800000000000000
+      internalID: -9121433833757951447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_3
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 184
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7d70abbdd98b63f0800000000000000
+      internalID: -906479314556387970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_4
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 184
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 334a29e0388c140b0800000000000000
+      internalID: -5746091184337279949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_5
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 184
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19d28b5ca8a1458c0800000000000000
+      internalID: -4011552184755278447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_6
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 184
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e84b244e65c5aa050800000000000000
+      internalID: 5812559797341566094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_7
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 184
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ce02c3c39385cd20800000000000000
+      internalID: 3298186972786462405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 167
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b23d3266c8fe7310800000000000000
+      internalID: 1404833664721564340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_9
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 167
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 025772eb2e040e380800000000000000
+      internalID: -8944077517360761568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_10
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 167
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6b73014a921d6990800000000000000
+      internalID: -7391230959720105108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_11
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 167
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18259109868097c10800000000000000
+      internalID: 2051680350431171201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_12
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 150
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 090bd4daab7103030800000000000000
+      internalID: 3472301403241558160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_13
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 150
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b09a49812049fc20800000000000000
+      internalID: 3240691919651246264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_14
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 150
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70272612f72da3650800000000000000
+      internalID: 6213510079373799943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 133
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aabd1d17e731bb840800000000000000
+      internalID: 5240804025172089770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_16
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 133
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03b0a4b63be1d0c70800000000000000
+      internalID: 8938834591348296496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_17
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 133
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66e73aefe4a7e4490800000000000000
+      internalID: -7760130628214620570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_18
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 133
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a529a983525bd9a0800000000000000
+      internalID: -6207277142654769758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_19
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 133
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a31c1f33835270570800000000000000
+      internalID: 8432749750594421050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_20
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 133
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2ee1df23c26dd670800000000000000
+      internalID: 8565110656788983341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_21
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 133
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d72fd5d1baad90030800000000000000
+      internalID: 3461538217077895805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65cd1883dc9a35100800000000000000
+      internalID: 95606715986336854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_23
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9bc40db0994fef80800000000000000
+      internalID: -8075154720856683620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_24
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6e4800a6ef9339d0800000000000000
+      internalID: -2795715130790752660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_25
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6726a7bfb4fd0bd90800000000000000
+      internalID: -7083916696419147146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_26
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41c5244a5c8c71dc0800000000000000
+      internalID: -3668242620280054764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_27
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca5c9e0177d14a350800000000000000
+      internalID: 6026974598550635948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_28
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b197a24fd271ef590800000000000000
+      internalID: -7638642431836391141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_29
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60f0a2765a491b810800000000000000
+      internalID: 1779366765909380870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_30
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8be165ab289f51c60800000000000000
+      internalID: 7788405470474411704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_31
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3953b391fb3556aa0800000000000000
+      internalID: -6168432034386856557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_32
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4bb05fb2cff75c50800000000000000
+      internalID: 6654068186361674573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 99
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7383ec1b7923bc940800000000000000
+      internalID: 5317399412145535031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_34
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 99
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebea990b0172e2dc0800000000000000
+      internalID: -3661946494369812802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_35
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 99
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b275579b614660420800000000000000
+      internalID: 2595872283989202731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_36
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 99
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28fd4a5c0e7b7a330800000000000000
+      internalID: 3722145793061478274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_37
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 99
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d1747a273571b350800000000000000
+      internalID: 6030730255821730257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_38
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 99
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a8f4c529a00e8450800000000000000
+      internalID: 6092808072361998504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_39
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 99
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17eb177eb5aa18de0800000000000000
+      internalID: -1332596703023219087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_40
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 99
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27b880b0634bacd50800000000000000
+      internalID: 6758412335029193586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_41
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 82
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 814f53604f0869500800000000000000
+      internalID: 402651002260812824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_42
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 82
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68507d62862e8b710800000000000000
+      internalID: 1709364995543205254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_43
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 82
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c9b2c9adc82116a0800000000000000
+      internalID: -6480353525027915325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_44
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 82
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e33e8212172dc6e0800000000000000
+      internalID: -1815752116186237976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_45
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 82
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cb7526abd2f275f0800000000000000
+      internalID: -760278361872958522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_46
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 82
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d8a95bcb7f7d5d70800000000000000
+      internalID: 9033516597244438737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_47
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 82
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab2b47973a1b2b320800000000000000
+      internalID: 2572313652857451194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_48
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 82
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1315146a74a1ccf50800000000000000
+      internalID: 6902921223886426417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_49
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 82
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deea4395e6cabf4b0800000000000000
+      internalID: -5405537337785143571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_50
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 82
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0589c004b1d81b30800000000000000
+      internalID: 4258384018716329230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_51
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 82
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4467bb7ae5f4816a0800000000000000
+      internalID: -6478340796012857788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_52
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 82
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 340dc24ac78bd3f40800000000000000
+      internalID: 5709922748045512771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_53
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 82
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b847bfaa065f32490800000000000000
+      internalID: -7772098736377072501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_54
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 82
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b08166a4899ef70f0800000000000000
+      internalID: -1116917342272088053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_55
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 82
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da032ce93aaeebf40800000000000000
+      internalID: 5746288163035426989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_56
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 82
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 725ed610daa93ef70800000000000000
+      internalID: 9215379330374165799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_57
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 65
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dfbd4f8ac8fd3000800000000000000
+      internalID: 17443522450669529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_58
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 65
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d42591a4890914ed0800000000000000
+      internalID: -2431503340050754995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_59
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 65
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c630e5309854a2d0800000000000000
+      internalID: -3268390053161716032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_60
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 65
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 305b5ab161482dc40800000000000000
+      internalID: 5535632122479752451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_61
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 65
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04e078ba167678ca0800000000000000
+      internalID: -6014725108142764480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_62
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 65
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b32d1b21003b0b550800000000000000
+      internalID: 6174631902019965499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_63
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 65
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aad542cc3114aad40800000000000000
+      internalID: 5596357040246381994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_64
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 65
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73db048cb0bf6e390800000000000000
+      internalID: -7789262477467796169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_65
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 65
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81c76eaf47e994710800000000000000
+      internalID: 1678046561435024408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_66
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 65
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c93238fd6cc9bf80800000000000000
+      internalID: -8090210482906842679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_67
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 65
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3408b1c1280404830800000000000000
+      internalID: 4053310592194936899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_68
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 65
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efa82dac6e82225b0800000000000000
+      internalID: -5394704431926048002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_69
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 65
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8230f499e363cf50800000000000000
+      internalID: 6900468908939031178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_70
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 65
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaffdfaa228a595c0800000000000000
+      internalID: -4209273409856733270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_71
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 585751e77642b3030800000000000000
+      internalID: 3475411564362036613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_72
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee0836e26819c0aa0800000000000000
+      internalID: -6193415382051356434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_73
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ab13bc29bc1bfe00800000000000000
+      internalID: 1079488117329828771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_74
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9120881e36a295480800000000000000
+      internalID: -8910043779301899751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioMakerTileset_75
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 525705c3d54bbeeb0800000000000000
+      internalID: -4689456274439375579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

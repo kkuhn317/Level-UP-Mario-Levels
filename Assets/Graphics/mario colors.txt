@@ -1,0 +1,21 @@
+Level up mario pallate:
+
+hat and shirt: #af3325
+overalls: #3b43c0
+buttons: #F4E902
+skin color: #f0e4b0
+eyes and mustache: #000000
+shoes and hair: #6b442b
+gloves: #ffffff
+
+goomba
+-------
+head: #825137
+body: #d6b29c
+eyebrows and shoes: #000000
+eyes: #ffffff
+
+ground block and hard block
+----------
+main: #e66218
+crack: #eecfb1 and #000000
