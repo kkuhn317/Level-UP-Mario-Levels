@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2690894693947484548}
   - component: {fileID: 4495857182287234611}
   - component: {fileID: 3987743576335916705}
+  - component: {fileID: -8332022170271997055}
   m_Layer: 8
   m_Name: BigMario
   m_TagString: Player
@@ -32,6 +33,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2, y: 2, z: -1.7000008}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -90,7 +92,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &2690894693943097858
 Animator:
-  serializedVersion: 3
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -103,6 +105,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -152,7 +155,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 2}
+  m_Size: {x: 0.8, y: 1.8}
   m_EdgeRadius: 0.01
 --- !u!114 &4495857182287234611
 MonoBehaviour:
@@ -198,7 +201,6 @@ MonoBehaviour:
   starPower: 0
   deadMario: {fileID: 2690894693950398662, guid: 20d9b4f0380f730429449ec7253b3628, type: 3}
   damageSound: {fileID: 8300000, guid: f31eaeb55093f4943b9f80fd5b6a035b, type: 3}
-  kickSound: {fileID: 8300000, guid: e6aace62cc8eb244fbfcd066ed3dd315, type: 3}
   bonkSound: {fileID: 8300000, guid: efb6a10e74f0c464b830bc9de81162da, type: 3}
 --- !u!82 &3987743576335916705
 AudioSource:
@@ -296,3 +298,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!81 &-8332022170271997055
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2690894693950398662}
+  m_Enabled: 1

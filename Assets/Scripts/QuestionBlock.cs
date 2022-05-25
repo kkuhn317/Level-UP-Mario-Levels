@@ -53,8 +53,10 @@ public class QuestionBlock : MonoBehaviour
 
             //print(impulse);
 
-            if (impulse.y <= 0)
+            // position comparison is to stop a weird bug where the player can hit the top corner of the block and activate it
+            if (impulse.y <= 0 || other.transform.position.y > transform.position.y) {
                 return;
+            }
 
             if (!brickBlock) {
                 QuestionBlockBounce();

@@ -12,6 +12,8 @@ TagManager:
   - BrickBlock
   - Music
   - MusicOverride
+  - MovingPlatform
+  - Ground
   layers:
   - Default
   - TransparentFX

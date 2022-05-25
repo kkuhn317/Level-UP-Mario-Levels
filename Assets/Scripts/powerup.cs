@@ -121,8 +121,8 @@ public class powerup : MonoBehaviour
                 hitRay = groundRight;
             }
 
-            pos.y = hitRay.collider.bounds.center.y + hitRay.collider.bounds.size.y / 2 + .5f;
-
+            //pos.y = hitRay.collider.bounds.center.y + hitRay.collider.bounds.size.y / 2 + .5f;
+            pos.y = hitRay.point.y + .5f;
             velocity.y = 0;
 
             state = PowerupState.walking;

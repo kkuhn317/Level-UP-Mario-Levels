@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HowWillMarioEscape.unity
     guid: 1d5836ecaed363f46812c6e9e8cb5c84
+  - enabled: 1
+    path: Assets/Scenes/GoombaPyramid.unity
+    guid: 256d8db99bbda6643ab493cac9befa4a
   - enabled: 0
     path: Assets/Scenes/Level1.unity
     guid: 2cda990e2423bbf4892e6590ba056729

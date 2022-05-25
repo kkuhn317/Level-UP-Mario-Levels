@@ -41,6 +41,9 @@ public class Playerbetter : MonoBehaviour
     public float groundLength = 0.6f;
     public float ceilingLength = 0.5f;
 
+    float colliderY;
+    float collideroffsetY;
+
     public Vector3 colliderOffset;
 
     public float damageinvinctime = 3f;
@@ -85,58 +88,14 @@ public class Playerbetter : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        colliderY = GetComponent<BoxCollider2D>().size.y;
+        collideroffsetY = GetComponent<BoxCollider2D>().offset.y;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        RaycastHit2D groundHit1 = Physics2D.Raycast(transform.position + colliderOffset, Vector2.down, groundLength, groundLayer);
-        RaycastHit2D groundHit2 = Physics2D.Raycast(transform.position - colliderOffset, Vector2.down, groundLength, groundLayer);
-
-        onGround = groundHit1 || groundHit2;
         
-        if (onGround) {
-            RaycastHit2D hitRay = groundHit1;
-
-            if (groundHit1) {
-                hitRay = groundHit1;
-            } else {
-                hitRay = groundHit2;
-            }
-
-            groundPos = hitRay.point;
-        }
-
-
-        RaycastHit2D ceilLeft = Physics2D.Raycast (transform.position - colliderOffset, Vector2.up, ceilingLength , groundLayer);
-        RaycastHit2D ceilMid = Physics2D.Raycast (transform.position, Vector2.up, ceilingLength , groundLayer);
-        RaycastHit2D ceilRight = Physics2D.Raycast (transform.position + colliderOffset, Vector2.up, ceilingLength , groundLayer);
-
-        if (ceilLeft.collider != null || ceilMid.collider != null || ceilRight.collider != null) {
-
-            RaycastHit2D hitRay = ceilMid;
-
-            if (ceilMid) {
-                hitRay = ceilMid;
-            } else if (ceilLeft) {
-                hitRay = ceilLeft;
-            } else if (ceilRight) {
-                hitRay = ceilRight;
-            }
-
-
-            //if (hitRay.collider.tag == "QuestionBlock") {
-            //
-            //    hitRay.collider.GetComponent<QuestionBlock>().QuestionBlockBounce();
-            //} else if (hitRay.collider.tag == "BrickBlock") {
-            //    if (powerupState == PowerupState.small) {
-            //        hitRay.collider.GetComponent<QuestionBlock>().QuestionBlockBounce();
-            //    } else {
-            //        hitRay.collider.GetComponent<QuestionBlock>().BrickBlockBreak();
-            //    }
-            //}
-        }
 
         if(Input.GetButtonDown("Jump")) {
             jumpTimer = Time.time + jumpDelay;
@@ -205,13 +164,81 @@ public class Playerbetter : MonoBehaviour
     }
 
     private void FixedUpdate() {
+        
+
         moveCharacter(direction.x);
         if(jumpTimer > Time.time && onGround){
             audioSource.Play();
             Jump();
         }
 
+        bool onMovingPlatform = false;
+        transform.parent = null;
+
+        RaycastHit2D groundHit1 = Physics2D.Raycast(transform.position + colliderOffset, Vector2.down, groundLength, groundLayer);
+        RaycastHit2D groundHit2 = Physics2D.Raycast(transform.position - colliderOffset, Vector2.down, groundLength, groundLayer);
+
+        onGround = groundHit1 || groundHit2;
+        
+        if (onGround) {
+            
+            RaycastHit2D hitRay = groundHit1;
+
+            if (groundHit1) {
+                hitRay = groundHit1;
+                if (groundHit1.transform.gameObject.tag == "MovingPlatform") {
+                    onMovingPlatform = true;
+                }
+            } else {
+                hitRay = groundHit2;
+                if (groundHit2.transform.gameObject.tag == "MovingPlatform") {
+                    onMovingPlatform = true;
+                }
+            }
+
+            groundPos = hitRay.point;
+
+            if (onMovingPlatform) {
+                transform.parent = hitRay.transform;
+            } else {
+                transform.parent = null;
+            }
+
+        }
+
+
+        RaycastHit2D ceilLeft = Physics2D.Raycast (transform.position - colliderOffset, Vector2.up, ceilingLength , groundLayer);
+        RaycastHit2D ceilMid = Physics2D.Raycast (transform.position, Vector2.up, ceilingLength , groundLayer);
+        RaycastHit2D ceilRight = Physics2D.Raycast (transform.position + colliderOffset, Vector2.up, ceilingLength , groundLayer);
+
+        if (ceilLeft.collider != null || ceilMid.collider != null || ceilRight.collider != null) {
+
+            RaycastHit2D hitRay = ceilMid;
+
+            if (ceilMid) {
+                hitRay = ceilMid;
+            } else if (ceilLeft) {
+                hitRay = ceilLeft;
+            } else if (ceilRight) {
+                hitRay = ceilRight;
+            }
+
+
+            //if (hitRay.collider.tag == "QuestionBlock") {
+            //
+            //    hitRay.collider.GetComponent<QuestionBlock>().QuestionBlockBounce();
+            //} else if (hitRay.collider.tag == "BrickBlock") {
+            //    if (powerupState == PowerupState.small) {
+            //        hitRay.collider.GetComponent<QuestionBlock>().QuestionBlockBounce();
+            //    } else {
+            //        hitRay.collider.GetComponent<QuestionBlock>().BrickBlockBreak();
+            //    }
+            //}
+        }
+
         modifyPhysics();
+
+        
     }
     void moveCharacter(float horizontal){
         bool crouch = (direction.y < -0.5);
@@ -229,8 +256,8 @@ public class Playerbetter : MonoBehaviour
             GetComponent<Animator>().SetBool("isDucking", false);
             inCrouchState = false;
             if (powerupState == PowerupState.big) {
-                GetComponent<BoxCollider2D>().size = new Vector2(GetComponent<BoxCollider2D>().size.x, 2.0f);
-                GetComponent<BoxCollider2D>().offset = new Vector2(GetComponent<BoxCollider2D>().offset.x, 0f);
+                GetComponent<BoxCollider2D>().size = new Vector2(GetComponent<BoxCollider2D>().size.x, colliderY);
+                GetComponent<BoxCollider2D>().offset = new Vector2(GetComponent<BoxCollider2D>().offset.x, collideroffsetY);
                 ceilingLength = 1.03f; // NOTE: THIS IS BAD PROGRAMMING BUT WHATEVER
             }
 

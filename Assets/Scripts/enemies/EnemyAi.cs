@@ -75,13 +75,30 @@ public class EnemyAi : MonoBehaviour
         }
 
         if (state != EnemyState.knockedAway) {
-            if (velocity.y <= 0)
-                pos = CheckGround (pos);
+            // convert to global position
+            Vector3 globalPos = pos;
+            if (transform.parent != null) {
+                globalPos = transform.parent.TransformPoint(pos);
+            }
 
-            CheckWalls (pos, -scale.x);
 
-            if (DontFallOffLedges && state == EnemyState.walking) 
-                CheckLedges(pos);
+            if (velocity.y <= 0) {
+                globalPos = CheckGround (globalPos);
+            }
+
+            CheckWalls (globalPos, -scale.x);
+
+            if (DontFallOffLedges && state == EnemyState.walking) {
+                //CheckLedges(pos);
+                CheckLedges(globalPos);
+            }
+
+            // convert back to local position
+            if (transform.parent != null) {
+                pos = transform.parent.InverseTransformPoint(globalPos);
+            } else {
+                pos = globalPos;
+            }
         }
 
         transform.localPosition = pos;
@@ -119,6 +136,9 @@ public class EnemyAi : MonoBehaviour
 
             state = EnemyState.walking;
 
+
+            //print("hit" + gameObject.name);
+
         } else {
 
             if (state != EnemyState.falling) {
@@ -126,7 +146,6 @@ public class EnemyAi : MonoBehaviour
                 Fall ();
             }
         }
-
         return pos;
     }
 

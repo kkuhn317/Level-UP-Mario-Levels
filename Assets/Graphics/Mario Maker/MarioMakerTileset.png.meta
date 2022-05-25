@@ -252,6 +252,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1960,6 +1961,83 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      MarioMakerTileset_5: -4011552184755278447
+      MarioMakerTileset_33: 5317399412145535031
+      MarioMakerTileset_47: 2572313652857451194
+      MarioMakerTileset_61: -6014725108142764480
+      MarioMakerTileset_65: 1678046561435024408
+      MarioMakerTileset_27: 6026974598550635948
+      MarioMakerTileset_3: -906479314556387970
+      MarioMakerTileset_68: -5394704431926048002
+      MarioMakerTileset_50: 4258384018716329230
+      MarioMakerTileset_8: 1404833664721564340
+      MarioMakerTileset_66: -8090210482906842679
+      MarioMakerTileset_9: -8944077517360761568
+      MarioMakerTileset_30: 7788405470474411704
+      MarioMakerTileset_41: 402651002260812824
+      MarioMakerTileset_23: -8075154720856683620
+      MarioMakerTileset_53: -7772098736377072501
+      MarioMakerTileset_12: 3472301403241558160
+      MarioMakerTileset_40: 6758412335029193586
+      MarioMakerTileset_54: -1116917342272088053
+      MarioMakerTileset_42: 1709364995543205254
+      MarioMakerTileset_59: -3268390053161716032
+      MarioMakerTileset_29: 1779366765909380870
+      MarioMakerTileset_25: -7083916696419147146
+      MarioMakerTileset_15: 5240804025172089770
+      MarioMakerTileset_64: -7789262477467796169
+      MarioMakerTileset_52: 5709922748045512771
+      MarioMakerTileset_16: 8938834591348296496
+      MarioMakerTileset_62: 6174631902019965499
+      MarioMakerTileset_43: -6480353525027915325
+      MarioMakerTileset_63: 5596357040246381994
+      MarioMakerTileset_32: 6654068186361674573
+      MarioMakerTileset_67: 4053310592194936899
+      MarioMakerTileset_70: -4209273409856733270
+      MarioMakerTileset_31: -6168432034386856557
+      MarioMakerTileset_34: -3661946494369812802
+      MarioMakerTileset_11: 2051680350431171201
+      MarioMakerTileset_21: 3461538217077895805
+      MarioMakerTileset_51: -6478340796012857788
+      MarioMakerTileset_56: 9215379330374165799
+      MarioMakerTileset_72: -6193415382051356434
+      MarioMakerTileset_17: -7760130628214620570
+      MarioMakerTileset_2: -9121433833757951447
+      MarioMakerTileset_46: 9033516597244438737
+      MarioMakerTileset_7: 3298186972786462405
+      MarioMakerTileset_18: -6207277142654769758
+      MarioMakerTileset_13: 3240691919651246264
+      MarioMakerTileset_71: 3475411564362036613
+      MarioMakerTileset_10: -7391230959720105108
+      MarioMakerTileset_1: -9040095398063270158
+      MarioMakerTileset_26: -3668242620280054764
+      MarioMakerTileset_55: 5746288163035426989
+      MarioMakerTileset_4: -5746091184337279949
+      MarioMakerTileset_19: 8432749750594421050
+      MarioMakerTileset_49: -5405537337785143571
+      MarioMakerTileset_37: 6030730255821730257
+      MarioMakerTileset_44: -1815752116186237976
+      MarioMakerTileset_58: -2431503340050754995
+      MarioMakerTileset_45: -760278361872958522
+      MarioMakerTileset_60: 5535632122479752451
+      MarioMakerTileset_48: 6902921223886426417
+      MarioMakerTileset_73: 1079488117329828771
+      MarioMakerTileset_75: -4689456274439375579
+      MarioMakerTileset_35: 2595872283989202731
+      MarioMakerTileset_39: -1332596703023219087
+      MarioMakerTileset_57: 17443522450669529
+      MarioMakerTileset_14: 6213510079373799943
+      MarioMakerTileset_74: -8910043779301899751
+      MarioMakerTileset_36: 3722145793061478274
+      MarioMakerTileset_22: 95606715986336854
+      MarioMakerTileset_24: -2795715130790752660
+      MarioMakerTileset_28: -7638642431836391141
+      MarioMakerTileset_20: 8565110656788983341
+      MarioMakerTileset_6: 5812559797341566094
+      MarioMakerTileset_69: 6900468908939031178
+      MarioMakerTileset_38: 6092808072361998504
+      MarioMakerTileset_0: 4721530592129389902
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -45,6 +45,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -304,6 +305,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      NES - Super Mario Bros - Mario & Luigi-1.png_2: -4674767792168801102
+      NES - Super Mario Bros - Mario & Luigi-1.png_5: -3852754880459612033
+      NES - Super Mario Bros - Mario & Luigi-1.png_0: 4373431404244607077
+      NES - Super Mario Bros - Mario & Luigi-1.png_6: -4328308135791032295
+      NES - Super Mario Bros - Mario & Luigi-1.png_3: -1403219889222454258
+      NES - Super Mario Bros - Mario & Luigi-1.png_4: -565804320187239966
+      NES - Super Mario Bros - Mario & Luigi-1.png_1: 7106255700356077499
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
