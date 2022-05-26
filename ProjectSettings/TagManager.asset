@@ -14,6 +14,7 @@ TagManager:
   - MusicOverride
   - MovingPlatform
   - Ground
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - Powerup
   - Spring
   - Coin
-  - 
+  - Projectile
   - 
   - 
   - 

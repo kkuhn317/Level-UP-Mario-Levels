@@ -13,6 +13,7 @@ public class powerup : MonoBehaviour
     public LayerMask wallMask;
 
     public GameObject newMarioState;
+    public int powerLevel = 1;
     public float starTime = -1;
 
     public GameObject starMusicOverride;
@@ -57,12 +58,26 @@ public class powerup : MonoBehaviour
                 starSong.GetComponent<musicOverride>().stopPlayingAfterTime(starTime);
             }
             if (newMarioState) {
-                other.GetComponent<Playerbetter>().ChangePowerup(newMarioState);
+                Playerbetter player = other.GetComponent<Playerbetter>();
+                Playerbetter.PowerupState playerState = player.powerupState;
+                if (canGetPowerup(playerState)) 
+                    other.GetComponent<Playerbetter>().ChangePowerup(newMarioState);
             }
             GetComponent<AudioSource>().Play();
             GetComponent<Collider2D>().enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
             Destroy(gameObject, 2);
+        }
+    }
+
+    private bool canGetPowerup(Playerbetter.PowerupState state) {
+        if (state == Playerbetter.PowerupState.small)
+            return true;
+        else {
+            if (powerLevel >= 2)
+                return true;
+            else
+                return false;
         }
     }
 

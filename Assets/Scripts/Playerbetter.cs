@@ -10,7 +10,7 @@ public class Playerbetter : MonoBehaviour
     public float runSpeed = 20f;
     public float slowDownForce = 5f;
     public Vector2 direction;
-    private bool facingRight = true;
+    public bool facingRight = true;
     private bool inCrouchState = false;
 
     [Header("Vertical Movement")]
@@ -23,6 +23,7 @@ public class Playerbetter : MonoBehaviour
     [Header("Components")]
     public Rigidbody2D rb;
     public Animator animator;
+    public bool hasIsBigParam = true;  // keep compatibility with small and big mario animator
     public LayerMask groundLayer;
 
     [Header("Physics")]
@@ -55,7 +56,8 @@ public class Playerbetter : MonoBehaviour
     public enum PowerupState {
 
         small,
-        big
+        big,
+        power
     }
 
     [Header("Powerups")]
@@ -64,7 +66,7 @@ public class Playerbetter : MonoBehaviour
     public PowerupState powerupState = PowerupState.small;
 
     //public GameObject BigMario;
-    public GameObject SmallMario;
+    public GameObject powerDownMario;
 
     [HideInInspector]
     public bool starPower = false;
@@ -90,6 +92,18 @@ public class Playerbetter : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         colliderY = GetComponent<BoxCollider2D>().size.y;
         collideroffsetY = GetComponent<BoxCollider2D>().offset.y;
+
+        if (hasIsBigParam) {
+            if (powerupState == PowerupState.big) {
+
+                GetComponent<Animator>().SetBool("isBig", true);
+
+            } else if (powerupState == PowerupState.small) {
+
+                GetComponent<Animator>().SetBool("isBig", false);
+
+            }
+        }
     }
 
     // Update is called once per frame
@@ -102,10 +116,6 @@ public class Playerbetter : MonoBehaviour
         }
 
         direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
-        if (inCrouchState && onGround) {
-            direction.x = 0f;
-        }
 
         SpriteRenderer sprite = GetComponent<SpriteRenderer>();
 
@@ -165,13 +175,14 @@ public class Playerbetter : MonoBehaviour
 
     private void FixedUpdate() {
         
-
+        // Movement
         moveCharacter(direction.x);
         if(jumpTimer > Time.time && onGround){
             audioSource.Play();
             Jump();
         }
 
+        // Floor detection
         bool onMovingPlatform = false;
         transform.parent = null;
 
@@ -206,7 +217,7 @@ public class Playerbetter : MonoBehaviour
 
         }
 
-
+        // Ceiling detection
         RaycastHit2D ceilLeft = Physics2D.Raycast (transform.position - colliderOffset, Vector2.up, ceilingLength , groundLayer);
         RaycastHit2D ceilMid = Physics2D.Raycast (transform.position, Vector2.up, ceilingLength , groundLayer);
         RaycastHit2D ceilRight = Physics2D.Raycast (transform.position + colliderOffset, Vector2.up, ceilingLength , groundLayer);
@@ -236,6 +247,7 @@ public class Playerbetter : MonoBehaviour
             //}
         }
 
+        // Physics
         modifyPhysics();
 
         
@@ -243,8 +255,10 @@ public class Playerbetter : MonoBehaviour
     void moveCharacter(float horizontal){
         bool crouch = (direction.y < -0.5);
 
-        if (crouch && powerupState == PowerupState.big && onGround) {
+        // Crouching
+        if (crouch && powerupState != PowerupState.small && onGround) {
 
+            // Start Crouch
             GetComponent<Animator>().SetBool("isDucking", true);
             inCrouchState = true;
             GetComponent<BoxCollider2D>().size = new Vector2(GetComponent<BoxCollider2D>().size.x, 1.0f);
@@ -253,9 +267,10 @@ public class Playerbetter : MonoBehaviour
 
         } else if ((!crouch && onGround) || (powerupState == PowerupState.small)) {
 
+            // Stop Crouch
             GetComponent<Animator>().SetBool("isDucking", false);
             inCrouchState = false;
-            if (powerupState == PowerupState.big) {
+            if (powerupState != PowerupState.small) {
                 GetComponent<BoxCollider2D>().size = new Vector2(GetComponent<BoxCollider2D>().size.x, colliderY);
                 GetComponent<BoxCollider2D>().offset = new Vector2(GetComponent<BoxCollider2D>().offset.x, collideroffsetY);
                 ceilingLength = 1.03f; // NOTE: THIS IS BAD PROGRAMMING BUT WHATEVER
@@ -263,18 +278,29 @@ public class Playerbetter : MonoBehaviour
 
         }
         
-        if (Input.GetButton("Fire3")) {
-            rb.AddForce(Vector2.right * horizontal * runSpeed);
-        } else {
-            if (Mathf.Abs(rb.velocity.x) <= maxSpeed) {
-                rb.AddForce(Vector2.right * horizontal * moveSpeed);
+        // Running or Walking
+        if (!inCrouchState || !onGround) {
+            if (Input.GetButton("Fire3")) {
+                rb.AddForce(Vector2.right * horizontal * runSpeed);
             } else {
-                rb.AddForce(Vector2.left * slowDownForce * Mathf.Sign(rb.velocity.x));
+                if (Mathf.Abs(rb.velocity.x) <= maxSpeed) {
+                    rb.AddForce(Vector2.right * horizontal * moveSpeed);
+                } else {
+                    rb.AddForce(Vector2.left * slowDownForce * Mathf.Sign(rb.velocity.x));
+                }
             }
         }
 
-        if ((horizontal > 0 && !facingRight) || (horizontal < 0 && facingRight)) {
-            Flip();
+        // Changing Direction
+        if (onGround) {
+            if ((horizontal > 0 && !facingRight) || (horizontal < 0 && facingRight)) {
+                Flip();
+            }
+            if (horizontal == 0) {
+                if ((rb.velocity.x > 0 && !facingRight) || (rb.velocity.x < 0 && facingRight)) {
+                    Flip();
+                }
+            }
         }
         
         if (Input.GetButton("Fire3")) {
@@ -306,15 +332,7 @@ public class Playerbetter : MonoBehaviour
             animator.SetBool("isJumping", true);
         }
 
-        if (powerupState == PowerupState.big) {
-
-            GetComponent<Animator>().SetBool("isBig", true);
-
-        } else if (powerupState == PowerupState.small) {
-
-            GetComponent<Animator>().SetBool("isBig", false);
-
-        }
+        
 
     }
     public void Jump() {
@@ -327,41 +345,66 @@ public class Playerbetter : MonoBehaviour
         changingDirections = (direction.x > 0 && rb.velocity.x < 0) || (direction.x < 0 && rb.velocity.x > 0);
 
         if(onGround) {
+            // no crazy crouch sliding
+            if (inCrouchState)
+                direction = new Vector2(0, direction.y);
 
+
+            // if not holding left or right all the way or changing directions
             if(Mathf.Abs(direction.x) < 0.4f || changingDirections){
+
+                // if running and holding left or right
                 if ((Input.GetButton("Fire3")) && (direction.x != 0)) {
                     rb.drag = runlinearDrag;
-                } else if ((Input.GetButton("Fire3")) && (direction.x == 0)) {
-                    if ((facingRight && rb.velocity.x < 0) || (!facingRight && rb.velocity.x > 0)) {
+
+                // if not holding left or right
+                } else if (direction.x == 0) {
+
+                    //if ((facingRight && rb.velocity.x < 0) || (!facingRight && rb.velocity.x > 0)) {
+                    if (Mathf.Abs(rb.velocity.x) < 5f) {
                         rb.drag = linearDrag;
                     } else {
                         rb.drag = 3 * runlinearDrag;
                     }
+                    //rb.drag = 3 * runlinearDrag;
+                
+                // if walking left or right (not all the way or changing directions)
                 } else {
-                    if ((facingRight && rb.velocity.x < 0) || (!facingRight && rb.velocity.x > 0)) {
-                        rb.drag = linearDrag * 2;
-                    } else {
-                        rb.drag = linearDrag;
-                    }
+                    //if ((facingRight && rb.velocity.x < 0) || (!facingRight && rb.velocity.x > 0)) {
+                    //    rb.drag = linearDrag * 2;
+                    //} else {
+                    rb.drag = linearDrag;
+                    //}
                 }
+
+            // if holding left or right all the way and not changing directions
             } else {
                 rb.drag = 0;
             }
+
+            // 0 gravity on the ground
             rb.gravityScale = 0;
 
+            // if falling while on the ground, set y velocity to 0
             if (rb.velocity.y < 0) {
                 rb.velocity = new Vector2(rb.velocity.x, 0f);
             }
 
+            // Stick to ground
             transform.position = new Vector3(transform.position.x, groundPos.y + groundLength - 0.01f, transform.position.z);
 
 
         }else{
+            // in the air
             rb.gravityScale = gravity;
             rb.drag = linearDrag * 0.15f;
             //if(rb.velocity.y < startfallingspeed){
+            
+            // Rising
             if(airtimer < Time.time || rb.velocity.y < startfallingspeed) {
                 rb.gravityScale = fallgravity;
+
+            // Falling
             }else if(rb.velocity.y > 0 && !Input.GetButton("Jump")){
                 rb.gravityScale = fallgravity;
                 airtimer = Time.time - 1f;
@@ -370,6 +413,7 @@ public class Playerbetter : MonoBehaviour
         }
     }
     void Flip(){
+        //print("flipped");
         facingRight = !facingRight;
         transform.rotation = Quaternion.Euler(0, facingRight ? 0 : 180, 0);
     }
@@ -379,13 +423,20 @@ public class Playerbetter : MonoBehaviour
             if (powerupState == PowerupState.small) {
                 toDead();
             } else {
-                toSmall();
+                powerDown();
             }
         }
     }
 
-    private void toSmall() {
-        GameObject newMario = Instantiate(SmallMario, new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z), transform.rotation);
+    private void powerDown() {
+        GameObject newMario;
+        if (powerupState == PowerupState.big) {
+            // go down to Small Mario
+            newMario = Instantiate(powerDownMario, new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z), transform.rotation);
+        } else {
+            // go down to Big Mario
+            newMario = Instantiate(powerDownMario, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
+        }
         newMario.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity;
         newMario.GetComponent<Playerbetter>().invincetimeremain = damageinvinctime;
         newMario.GetComponent<Playerbetter>().playDamageSound();
@@ -421,10 +472,18 @@ public class Playerbetter : MonoBehaviour
     }
 
     public void ChangePowerup(GameObject newMarioObject) {
-        GameObject newMario = Instantiate(newMarioObject, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), transform.rotation);
+        GameObject newMario;
+        if (powerupState == PowerupState.small) {
+            // place big mario higher up than small mario
+            newMario = Instantiate(newMarioObject, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity);
+        } else {
+            // no need to change position
+            newMario = Instantiate(newMarioObject, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        }
         newMario.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity;
+        if (!facingRight)
+            newMario.GetComponent<Playerbetter>().Flip();
         Destroy(gameObject);
-        // TODO: Check if mario should get the powerup or not
     }
 
     private void OnDrawGizmos() {

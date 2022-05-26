@@ -179,6 +179,7 @@ MonoBehaviour:
   startfallingspeed: 1
   rb: {fileID: -7424962729985868706}
   animator: {fileID: 2690894693943097858}
+  hasIsBigParam: 1
   groundLayer:
     serializedVersion: 2
     m_Bits: 1
@@ -197,7 +198,7 @@ MonoBehaviour:
   invincetimeremain: 0
   groundPos: {x: 0, y: 0}
   powerupState: 1
-  SmallMario: {fileID: 2690894693950398662, guid: f3b9368873e1f3a4c8a7a9eac119ef24, type: 3}
+  powerDownMario: {fileID: 2690894693950398662, guid: f3b9368873e1f3a4c8a7a9eac119ef24, type: 3}
   starPower: 0
   deadMario: {fileID: 2690894693950398662, guid: 20d9b4f0380f730429449ec7253b3628, type: 3}
   damageSound: {fileID: 8300000, guid: f31eaeb55093f4943b9f80fd5b6a035b, type: 3}
