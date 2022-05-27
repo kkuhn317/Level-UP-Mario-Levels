@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6119232}
   - component: {fileID: 2326321649364782846}
   - component: {fileID: -8724429089205190362}
+  - component: {fileID: 7139227766434012500}
   m_Layer: 0
   m_Name: BrickBlock
   m_TagString: BrickBlock
@@ -30,6 +31,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -129,7 +131,6 @@ MonoBehaviour:
   brickBlock: 1
   noCoinIfNoItem: 0
   spawnItem: {fileID: 0}
-  BrickPiece: {fileID: 3076196377758797655, guid: d17e7e5306de4b5478176fea5af48344, type: 3}
   coinMoveSpeed: 8
   coinMoveHeight: 3
   coinFallDistance: 2
@@ -138,7 +139,6 @@ MonoBehaviour:
   activated: 0
   emptyBlockSprite: {fileID: 21300000, guid: d1c66c68cb70f4212b2b67f685846f4d, type: 3}
   itemRiseSound: {fileID: 8300000, guid: d4c6d1ed8076c984eb47bd99d9200eb5, type: 3}
-  breakSound: {fileID: 8300000, guid: ffd039f768efeb44b8dc9ac84acf2585, type: 3}
 --- !u!82 &-8724429089205190362
 AudioSource:
   m_ObjectHideFlags: 0
@@ -235,3 +235,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7139227766434012500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e04d764878c0e984bb3c2e5121d27f40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BlockPiece: {fileID: 3076196377758797655, guid: d17e7e5306de4b5478176fea5af48344, type: 3}
+  breakSound: {fileID: 8300000, guid: ffd039f768efeb44b8dc9ac84acf2585, type: 3}

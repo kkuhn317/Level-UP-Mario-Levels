@@ -18,19 +18,21 @@ public class EnemyAi : MonoBehaviour
 
     public float enemyHeight;
 
+    public bool canBeFireballed = true;
+
     public LayerMask floorMask;
     public LayerMask wallMask;
 
     private bool firstframe = true;
 
-    private enum EnemyState {
+    public enum EnemyState {
         
         walking,
         falling,
         knockedAway
     }
 
-    private EnemyState state = EnemyState.falling;
+    public EnemyState state = EnemyState.falling;
 
     // Start is called before the first frame update
     void Start()
@@ -51,7 +53,7 @@ public class EnemyAi : MonoBehaviour
 
     void UpdateEnemyPosition () {
 
-        Vector3 pos = transform.localPosition;
+        Vector3 pos = transform.position;
         Vector3 scale = transform.localScale;
 
         if (state == EnemyState.falling || state == EnemyState.knockedAway) {
@@ -74,19 +76,26 @@ public class EnemyAi : MonoBehaviour
             scale.x = -1;
         }
 
+        // fix bug where enemy has y velocity but walking
+        // making it walk in the air
+        if (state == EnemyState.walking) {
+            velocity.y = 0;
+        }
+
         if (state != EnemyState.knockedAway) {
             // convert to global position
             Vector3 globalPos = pos;
-            if (transform.parent != null) {
-                globalPos = transform.parent.TransformPoint(pos);
-            }
+            //if (transform.parent != null) {
+            //    globalPos = transform.parent.TransformPoint(pos);
+            //}
 
 
             if (velocity.y <= 0) {
                 globalPos = CheckGround (globalPos);
             }
 
-            CheckWalls (globalPos, -scale.x);
+            if (velocity.x != 0)
+                CheckWalls (globalPos, -scale.x);
 
             if (DontFallOffLedges && state == EnemyState.walking) {
                 //CheckLedges(pos);
@@ -94,23 +103,26 @@ public class EnemyAi : MonoBehaviour
             }
 
             // convert back to local position
-            if (transform.parent != null) {
-                pos = transform.parent.InverseTransformPoint(globalPos);
-            } else {
-                pos = globalPos;
-            }
+            //if (transform.parent != null) {
+            //    pos = transform.parent.InverseTransformPoint(globalPos);
+            //} else {
+            //    pos = globalPos;
+            //}
         }
 
-        transform.localPosition = pos;
+        transform.position = pos;
         transform.localScale = scale;
     }
 
     Vector3 CheckGround (Vector3 pos) {
+        //if (velocity.y >= 0) {
+        //    return pos;
+        //}
 
         float halfHeight = enemyHeight / 2;
 
         Vector2 originLeft = new Vector2 (pos.x - 0.5f + 0.2f, pos.y - halfHeight);
-        Vector2 originMiddle = new Vector2 (pos.x, pos.y - halfHeight);
+        Vector2 originMiddle = new Vector2 (pos.x, pos.y - (halfHeight + 0.01f));
         Vector2 originRight = new Vector2 (pos.x + 0.5f - 0.2f, pos.y - halfHeight);
         //print("Time.deltaTime is:" + (Time.deltaTime));
         //print("Velocity is:" + velocity);
@@ -137,7 +149,7 @@ public class EnemyAi : MonoBehaviour
             state = EnemyState.walking;
 
 
-            //print("hit" + gameObject.name);
+            //print("hit " + hitRay.collider.gameObject.name);
 
         } else {
 
@@ -232,5 +244,14 @@ public class EnemyAi : MonoBehaviour
             GetComponent<Collider2D>().enabled = false;
             transform.rotation = Quaternion.identity;
         }
+    }
+
+    public void KnockAwaySound(AudioClip sound, bool direction) {
+        // play sound
+        if (sound != null && state != EnemyState.knockedAway && GetComponent<AudioSource>() != null) {
+            GetComponent<AudioSource>().PlayOneShot(sound);
+            KnockAway(direction);
+        }
+
     }
 }

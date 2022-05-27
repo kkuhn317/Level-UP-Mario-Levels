@@ -68,6 +68,9 @@ public class Playerbetter : MonoBehaviour
     //public GameObject BigMario;
     public GameObject powerDownMario;
 
+    // so that you can only hurt the player once per frame
+    private bool damaged = false;
+
     [HideInInspector]
     public bool starPower = false;
     private Color[] StarColors = {Color.green, Color.yellow, Color.blue, Color.red};
@@ -335,12 +338,15 @@ public class Playerbetter : MonoBehaviour
         
 
     }
+
+    // for jumping and also stomping enemies
     public void Jump() {
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
         jumpTimer = 0;
         airtimer = Time.time + airtime;
     }
+    
     void modifyPhysics(){
         changingDirections = (direction.x > 0 && rb.velocity.x < 0) || (direction.x < 0 && rb.velocity.x > 0);
 
@@ -420,6 +426,10 @@ public class Playerbetter : MonoBehaviour
 
     public void damageMario() {
         if (invincetimeremain == 0f) {
+            if (damaged) {
+                return;
+            }
+            damaged = true;
             if (powerupState == PowerupState.small) {
                 toDead();
             } else {

@@ -13,7 +13,6 @@ public class QuestionBlock : MonoBehaviour
 
     public GameObject spawnItem;
 
-    public GameObject BrickPiece;
 
     public float coinMoveSpeed = 8f;
     public float coinMoveHeight = 3f;
@@ -28,7 +27,7 @@ public class QuestionBlock : MonoBehaviour
 
     private bool canBounce = true;
 
-    public AudioClip itemRiseSound, breakSound;
+    public AudioClip itemRiseSound;
 
     private AudioSource audioSource;
 
@@ -87,22 +86,7 @@ public class QuestionBlock : MonoBehaviour
         if (spawnItem) {
             QuestionBlockBounce();
         } else {
-            GameObject BrickPiece1 = (GameObject)Instantiate(BrickPiece) as GameObject;
-            BrickPiece1.transform.position = new Vector3(originalPosition.x - .25f, originalPosition.y + .25f, -3);
-            BrickPiece1.GetComponent<Rigidbody2D>().velocity = new Vector2(-4, 16);
-            GameObject BrickPiece2 = (GameObject)Instantiate(BrickPiece) as GameObject;
-            BrickPiece2.transform.position = new Vector3(originalPosition.x + .25f, originalPosition.y + .25f, -3);
-            BrickPiece2.GetComponent<Rigidbody2D>().velocity = new Vector2(4, 16);
-            GameObject BrickPiece3 = (GameObject)Instantiate(BrickPiece) as GameObject;
-            BrickPiece3.transform.position = new Vector3(originalPosition.x - .25f, originalPosition.y - .25f, -3);
-            BrickPiece3.GetComponent<Rigidbody2D>().velocity = new Vector2(-4, 10);
-            GameObject BrickPiece4 = (GameObject)Instantiate(BrickPiece) as GameObject;
-            BrickPiece4.transform.position = new Vector3(originalPosition.x + .25f, originalPosition.y - .25f, -3);
-            BrickPiece4.GetComponent<Rigidbody2D>().velocity = new Vector2(4, 10);
-            audioSource.PlayOneShot(breakSound);
-            GetComponent<SpriteRenderer>().enabled = false;
-            GetComponent<Collider2D>().enabled = false;
-            Destroy(gameObject, 2);
+            GetComponent<breakableBlock>().breakBlock();
         }
 
     }
@@ -159,11 +143,17 @@ public class QuestionBlock : MonoBehaviour
 
     IEnumerator Bounce () {
 
+        //print(spawnItem != null);
+
         if (spawnItem || !brickBlock) {
             ChangeSprite ();
-            Invoke("PresentCoin", 0.25f);
-        } else if (!spawnItem && !brickBlock) {
+        }
+        
+        if (!spawnItem && !brickBlock) {
             PresentCoin();
+        }
+        else if (spawnItem) {
+            Invoke("PresentCoin", 0.25f);
         }
 
         while (true) {

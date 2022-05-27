@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/HowWillMarioEscape.unity
+- path: Assets/Scenes/GoombaPyramid.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
