@@ -25,6 +25,8 @@ public class EnemyAi : MonoBehaviour
 
     private bool firstframe = true;
 
+    private float adjDeltaTime;
+
     public enum EnemyState {
         
         walking,
@@ -46,6 +48,14 @@ public class EnemyAi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        adjDeltaTime = Time.deltaTime;
+
+        if (adjDeltaTime > 0.1f) {
+            adjDeltaTime = 0f;  // lag spike fix
+            // TODO: apply lag spike fix to all other moving objects
+            //print("lagging!");
+        }
+
         if ((!stayStill || state == EnemyState.knockedAway) && !firstframe)
             UpdateEnemyPosition ();
         firstframe = false;
@@ -56,22 +66,24 @@ public class EnemyAi : MonoBehaviour
         Vector3 pos = transform.position;
         Vector3 scale = transform.localScale;
 
+        //print("adjDeltaTime: " + adjDeltaTime);
+
         if (state == EnemyState.falling || state == EnemyState.knockedAway) {
             
-            pos.y += velocity.y * Time.deltaTime;
+            pos.y += velocity.y * adjDeltaTime;
 
-            velocity.y -= gravity * Time.deltaTime;
+            velocity.y -= gravity * adjDeltaTime;
         }
 
         if (isWalkingLeft) {
 
-            pos.x -= velocity.x * Time.deltaTime;
+            pos.x -= velocity.x * adjDeltaTime;
 
             scale.x = 1;
 
         } else {
 
-            pos.x += velocity.x * Time.deltaTime;
+            pos.x += velocity.x * adjDeltaTime;
 
             scale.x = -1;
         }
@@ -124,11 +136,11 @@ public class EnemyAi : MonoBehaviour
         Vector2 originLeft = new Vector2 (pos.x - 0.5f + 0.2f, pos.y - halfHeight);
         Vector2 originMiddle = new Vector2 (pos.x, pos.y - (halfHeight + 0.01f));
         Vector2 originRight = new Vector2 (pos.x + 0.5f - 0.2f, pos.y - halfHeight);
-        //print("Time.deltaTime is:" + (Time.deltaTime));
+        //print("adjDeltaTime is:" + (adjDeltaTime));
         //print("Velocity is:" + velocity);
-        RaycastHit2D groundLeft = Physics2D.Raycast (originLeft, Vector2.down, -velocity.y * Time.deltaTime, floorMask);
-        RaycastHit2D groundMiddle = Physics2D.Raycast (originMiddle, Vector2.down, -velocity.y * Time.deltaTime, floorMask);
-        RaycastHit2D groundRight = Physics2D.Raycast (originRight, Vector2.down, -velocity.y * Time.deltaTime, floorMask);
+        RaycastHit2D groundLeft = Physics2D.Raycast (originLeft, Vector2.down, -velocity.y * adjDeltaTime, floorMask);
+        RaycastHit2D groundMiddle = Physics2D.Raycast (originMiddle, Vector2.down, -velocity.y * adjDeltaTime, floorMask);
+        RaycastHit2D groundRight = Physics2D.Raycast (originRight, Vector2.down, -velocity.y * adjDeltaTime, floorMask);
 
         if (groundLeft.collider != null || groundMiddle.collider != null || groundRight.collider != null) {
 
@@ -187,9 +199,9 @@ public class EnemyAi : MonoBehaviour
         Vector2 originMiddle = new Vector2 (pos.x + direction * 0.5f, pos.y - halfHeight + .5f);
         Vector2 originBottom = new Vector2 (pos.x + direction * 0.5f, pos.y - halfHeight + 0.2f);
 
-        RaycastHit2D wallTop = Physics2D.Raycast (originTop, new Vector2 (direction, 0), velocity.x * Time.deltaTime, wallMask);
-        RaycastHit2D wallMiddle = Physics2D.Raycast (originMiddle, new Vector2 (direction, 0), velocity.x * Time.deltaTime, wallMask);
-        RaycastHit2D wallBottom = Physics2D.Raycast (originBottom, new Vector2 (direction, 0), velocity.x * Time.deltaTime, wallMask);
+        RaycastHit2D wallTop = Physics2D.Raycast (originTop, new Vector2 (direction, 0), velocity.x * adjDeltaTime, wallMask);
+        RaycastHit2D wallMiddle = Physics2D.Raycast (originMiddle, new Vector2 (direction, 0), velocity.x * adjDeltaTime, wallMask);
+        RaycastHit2D wallBottom = Physics2D.Raycast (originBottom, new Vector2 (direction, 0), velocity.x * adjDeltaTime, wallMask);
 
         if (wallTop.collider != null || wallMiddle.collider != null || wallBottom.collider != null) {
 

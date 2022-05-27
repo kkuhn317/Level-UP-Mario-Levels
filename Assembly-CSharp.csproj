@@ -36,6 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\door.cs" />
      <Compile Include="Assets\Scripts\powerup.cs" />
      <Compile Include="Assets\Scripts\flagpole.cs" />
      <Compile Include="Assets\Scripts\QuestionBlock.cs" />
@@ -57,18 +58,17 @@
      <Compile Include="Assets\Scripts\musicOverride.cs" />
      <Compile Include="Assets\Scripts\movingPlatform.cs" />
      <Compile Include="Assets\Scripts\Playerbetter.cs" />
+     <Compile Include="Assets\key.cs" />
      <Compile Include="Assets\Scripts\Castle.cs" />
      <Compile Include="Assets\Scripts\FallDestroy.cs" />
      <Compile Include="Assets\Scripts\enemies\DeadlyEnemy.cs" />
      <Compile Include="Assets\Scripts\Spring.cs" />
+     <Compile Include="Assets\starMoveOutward.cs" />
      <Compile Include="Assets\Scripts\globalVariables.cs" />
      <Compile Include="Assets\Scripts\livesCounter.cs" />
      <Compile Include="Assets\Scripts\FallingBlock.cs" />
      <Compile Include="Assets\Scripts\enemies\koopa.cs" />
      <Compile Include="Assets\Scripts\Level Specific\fallingSpikeheadGoomba.cs" />
-     <Compile Include="Assets\key.cs" />
-     <Compile Include="Assets\starMoveOutward.cs" />
-     <Compile Include="Assets\door.cs" />
      <None Include="Assets\Graphics\mario colors.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.3f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
