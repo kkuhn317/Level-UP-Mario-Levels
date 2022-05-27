@@ -361,6 +361,8 @@
 -r:"Library/Bee/artifacts/500b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/500b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/500b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/door.cs"
+"Assets/key.cs"
 "Assets/Scripts/breakableBlock.cs"
 "Assets/Scripts/CameraFollow.cs"
 "Assets/Scripts/Castle.cs"
@@ -391,6 +393,7 @@
 "Assets/Scripts/powerup.cs"
 "Assets/Scripts/QuestionBlock.cs"
 "Assets/Scripts/Spring.cs"
+"Assets/starMoveOutward.cs"
 -langversion:9.0
 
 /deterministic

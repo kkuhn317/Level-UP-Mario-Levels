@@ -8,6 +8,8 @@ public static class globalVariables
     public static int lives = 6;
     public static int levelscene = 0;
 
+    public static List<GameObject> keys = new List<GameObject>();
+
     public static bool firstAttempt = true;
 
 }

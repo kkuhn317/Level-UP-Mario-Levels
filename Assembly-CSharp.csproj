@@ -39,6 +39,7 @@
      <Compile Include="Assets\Scripts\powerup.cs" />
      <Compile Include="Assets\Scripts\flagpole.cs" />
      <Compile Include="Assets\Scripts\QuestionBlock.cs" />
+     <Compile Include="Assets\Scripts\breakableBlock.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\firePower.cs" />
      <Compile Include="Assets\Scripts\dontDestroyOnLoad.cs" />
@@ -47,10 +48,12 @@
      <Compile Include="Assets\Scripts\coin.cs" />
      <Compile Include="Assets\Scripts\ObjectPhysics.cs" />
      <Compile Include="Assets\Scripts\enemies\goomba.cs" />
+     <Compile Include="Assets\Scripts\enemies\BombOmb.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\enemies\EnemyAi.cs" />
      <Compile Include="Assets\Scripts\deadMario.cs" />
      <Compile Include="Assets\Scripts\Level Specific\HowWillMarioEscape\specialQuestionBlock.cs" />
+     <Compile Include="Assets\Scripts\explosion.cs" />
      <Compile Include="Assets\Scripts\musicOverride.cs" />
      <Compile Include="Assets\Scripts\movingPlatform.cs" />
      <Compile Include="Assets\Scripts\Playerbetter.cs" />
@@ -63,9 +66,9 @@
      <Compile Include="Assets\Scripts\FallingBlock.cs" />
      <Compile Include="Assets\Scripts\enemies\koopa.cs" />
      <Compile Include="Assets\Scripts\Level Specific\fallingSpikeheadGoomba.cs" />
-     <Compile Include="Assets\Scripts\enemies\BombOmb.cs" />
-     <Compile Include="Assets\Scripts\breakableBlock.cs" />
-     <Compile Include="Assets\Scripts\explosion.cs" />
+     <Compile Include="Assets\key.cs" />
+     <Compile Include="Assets\starMoveOutward.cs" />
+     <Compile Include="Assets\door.cs" />
      <None Include="Assets\Graphics\mario colors.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.3f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

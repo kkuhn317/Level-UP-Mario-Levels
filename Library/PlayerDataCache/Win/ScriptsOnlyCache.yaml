@@ -16,18 +16,21 @@ ScriptsOnlyBuild:
     - coin
     - deadMario
     - dontDestroyOnLoad
+    - door
     - explosion
     - fallingSpikeheadGoomba
     - firePower
     - fireball
     - flagpole
     - goomba
+    - key
     - koopa
     - livesCounter
     - movingPlatform
     - musicOverride
     - powerup
     - specialQuestionBlock
+    - starMoveOutward
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
@@ -63,6 +66,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
     - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -136,15 +140,15 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 2432}
+      Script: {instanceID: 2434}
     - Class: 114
-      Script: {instanceID: 2904}
+      Script: {instanceID: 2906}
     - Class: 114
-      Script: {instanceID: 3084}
+      Script: {instanceID: 3086}
     - Class: 114
-      Script: {instanceID: 3360}
+      Script: {instanceID: 3362}
     - Class: 114
-      Script: {instanceID: 3660}
+      Script: {instanceID: 3662}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -203,61 +207,67 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2146}
     - Class: 114
+      Script: {instanceID: 2164}
+    - Class: 114
       Script: {instanceID: 2178}
     - Class: 114
       Script: {instanceID: 2188}
     - Class: 114
       Script: {instanceID: 2342}
     - Class: 114
-      Script: {instanceID: 2448}
+      Script: {instanceID: 2450}
     - Class: 114
-      Script: {instanceID: 2740}
+      Script: {instanceID: 2742}
     - Class: 114
-      Script: {instanceID: 3016}
+      Script: {instanceID: 3018}
     - Class: 114
-      Script: {instanceID: 3110}
+      Script: {instanceID: 3112}
     - Class: 114
-      Script: {instanceID: 3280}
+      Script: {instanceID: 3282}
     - Class: 114
-      Script: {instanceID: 3444}
+      Script: {instanceID: 3446}
     - Class: 114
-      Script: {instanceID: 3706}
+      Script: {instanceID: 3708}
     - Class: 114
-      Script: {instanceID: 3986}
+      Script: {instanceID: 3798}
     - Class: 114
-      Script: {instanceID: 4088}
+      Script: {instanceID: 3990}
     - Class: 114
-      Script: {instanceID: 4474}
+      Script: {instanceID: 4092}
     - Class: 114
-      Script: {instanceID: 4542}
+      Script: {instanceID: 4362}
     - Class: 114
-      Script: {instanceID: 4578}
+      Script: {instanceID: 4480}
     - Class: 114
-      Script: {instanceID: 4598}
+      Script: {instanceID: 4548}
     - Class: 114
-      Script: {instanceID: 4692}
+      Script: {instanceID: 4584}
     - Class: 114
-      Script: {instanceID: 4766}
+      Script: {instanceID: 4604}
     - Class: 114
-      Script: {instanceID: 5084}
+      Script: {instanceID: 4698}
     - Class: 114
-      Script: {instanceID: 5100}
+      Script: {instanceID: 4772}
     - Class: 114
-      Script: {instanceID: 5620}
+      Script: {instanceID: 5090}
     - Class: 114
-      Script: {instanceID: 6088}
+      Script: {instanceID: 5106}
     - Class: 114
-      Script: {instanceID: 6154}
+      Script: {instanceID: 5626}
     - Class: 114
-      Script: {instanceID: 6278}
+      Script: {instanceID: 6094}
     - Class: 114
-      Script: {instanceID: 6308}
+      Script: {instanceID: 6160}
     - Class: 114
-      Script: {instanceID: 70036}
+      Script: {instanceID: 6284}
     - Class: 114
-      Script: {instanceID: 148426}
+      Script: {instanceID: 6314}
     - Class: 114
-      Script: {instanceID: 168752}
+      Script: {instanceID: 58730}
+    - Class: 114
+      Script: {instanceID: 103388}
+    - Class: 114
+      Script: {instanceID: 138108}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -330,41 +340,41 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2342}
     - Class: 114
-      Script: {instanceID: 2448}
+      Script: {instanceID: 2450}
     - Class: 114
-      Script: {instanceID: 3106}
+      Script: {instanceID: 3108}
     - Class: 114
-      Script: {instanceID: 3110}
+      Script: {instanceID: 3112}
     - Class: 114
-      Script: {instanceID: 3280}
+      Script: {instanceID: 3282}
     - Class: 114
-      Script: {instanceID: 3986}
+      Script: {instanceID: 3990}
     - Class: 114
-      Script: {instanceID: 4088}
+      Script: {instanceID: 4092}
     - Class: 114
-      Script: {instanceID: 4224}
+      Script: {instanceID: 4228}
     - Class: 114
-      Script: {instanceID: 4474}
+      Script: {instanceID: 4480}
     - Class: 114
-      Script: {instanceID: 4542}
+      Script: {instanceID: 4548}
     - Class: 114
-      Script: {instanceID: 4562}
+      Script: {instanceID: 4568}
     - Class: 114
-      Script: {instanceID: 4598}
+      Script: {instanceID: 4604}
     - Class: 114
-      Script: {instanceID: 4766}
+      Script: {instanceID: 4772}
     - Class: 114
-      Script: {instanceID: 5084}
+      Script: {instanceID: 5090}
     - Class: 114
-      Script: {instanceID: 5100}
+      Script: {instanceID: 5106}
     - Class: 114
-      Script: {instanceID: 5620}
+      Script: {instanceID: 5626}
     - Class: 114
-      Script: {instanceID: 6088}
+      Script: {instanceID: 6094}
     - Class: 114
-      Script: {instanceID: 6154}
+      Script: {instanceID: 6160}
     - Class: 114
-      Script: {instanceID: 6308}
+      Script: {instanceID: 6314}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -421,21 +431,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2342}
     - Class: 114
-      Script: {instanceID: 2432}
+      Script: {instanceID: 2434}
     - Class: 114
-      Script: {instanceID: 2904}
+      Script: {instanceID: 2906}
     - Class: 114
-      Script: {instanceID: 3084}
+      Script: {instanceID: 3086}
     - Class: 114
-      Script: {instanceID: 3110}
+      Script: {instanceID: 3112}
     - Class: 114
-      Script: {instanceID: 3360}
+      Script: {instanceID: 3362}
     - Class: 114
-      Script: {instanceID: 3660}
+      Script: {instanceID: 3662}
     - Class: 114
-      Script: {instanceID: 4474}
+      Script: {instanceID: 4480}
     - Class: 114
-      Script: {instanceID: 5978}
+      Script: {instanceID: 5984}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -478,15 +488,15 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 2432}
+      Script: {instanceID: 2434}
     - Class: 114
-      Script: {instanceID: 2904}
+      Script: {instanceID: 2906}
     - Class: 114
-      Script: {instanceID: 3084}
+      Script: {instanceID: 3086}
     - Class: 114
-      Script: {instanceID: 3360}
+      Script: {instanceID: 3362}
     - Class: 114
-      Script: {instanceID: 3660}
+      Script: {instanceID: 3662}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -604,6 +614,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: QuestionBlock
+  - hash:
+      serializedVersion: 2
+      Hash: 4238aa142688189cc96de488be0cb759
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: breakableBlock
   - hash:
       serializedVersion: 2
       Hash: 5f4d905893394792258b5b23aec31fa8
@@ -834,6 +850,12 @@ ScriptsOnlyBuild:
     className: Bone
   - hash:
       serializedVersion: 2
+      Hash: c9f32b75a4b85fc38503701f646af0d0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BombOmb
+  - hash:
+      serializedVersion: 2
       Hash: 69415240821be7986b27e72bf9609a30
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -916,6 +938,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: BaseInput
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: explosion
   - hash:
       serializedVersion: 2
       Hash: 18c222bef9ae745ce69ddde9b74337ca
@@ -1200,22 +1228,22 @@ ScriptsOnlyBuild:
     className: FabrikSolver2D
   - hash:
       serializedVersion: 2
-      Hash: c9f32b75a4b85fc38503701f646af0d0
+      Hash: f619493b497dcde974e5d0eed7c500f8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: BombOmb
+    className: key
   - hash:
       serializedVersion: 2
-      Hash: 4238aa142688189cc96de488be0cb759
+      Hash: 62b9b49eb438926ae33fdbd4ba994d3a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: breakableBlock
+    className: starMoveOutward
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 53d99d0298c8cb19b570e4165107b725
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: explosion
+    className: door
   platform: 5
   scenePathNames:
   - Assets/Scenes/GoombaPyramid.unity
@@ -1223,5 +1251,5 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Lives.unity
   - Assets/Scenes/Win.unity
   - Assets/Scenes/GameOver.unity
-  playerPath: C:/Users/matt/Desktop/games/My games/level up/beta/Super Mario Maker
-    3.exe
+  playerPath: C:/Users/matt/Desktop/games/My games/level up/sneek peak/Level Up Playable
+    Animations.exe

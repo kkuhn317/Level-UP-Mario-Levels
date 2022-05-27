@@ -7117,7 +7117,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -10615,6 +10615,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: fireball2
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 368
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7443ef20936878042abe553ed71c9912
+      internalID: 1956191557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireball3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 352
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52c4a94abe99afc4e931becbc22551b4
+      internalID: 936414400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireball4
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 352
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ddd4cc41038fe84f861c43cc9ab2d3c
+      internalID: 711269694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -10626,7 +10689,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      items_275: 1629762946634793544
+      items_290: -4850781349598404350
       items_281: 8742299254280240975
       items_125: -1929863458776020100
       items_369: 3069537194434861072
@@ -10679,8 +10742,8 @@ TextureImporter:
       items_121: -6064055205779420750
       items_239: 880747531601085966
       items_206: -498969519454911232
-      items_297: -1189029685597959389
       items_326: 2490575410972222643
+      items_297: -1189029685597959389
       items_15: -6338023803479276477
       items_273: -5531112312634962606
       items_106: 6203400943613683936
@@ -10703,10 +10766,10 @@ TextureImporter:
       items_75: 3447626333678633045
       items_12: -2693009140137883590
       items_89: -220729229975464070
-      items_301: 4367303311738571903
+      items_293: 8046720434674076825
       items_9: -732356172534689064
       items_214: 2429457697700603145
-      items_293: 8046720434674076825
+      items_301: 4367303311738571903
       items_377: 6973324125374103323
       items_402: -4463534143745720843
       items_21: -4058434812019303673
@@ -10733,14 +10796,14 @@ TextureImporter:
       items_284: 2530256077145114623
       items_404: 8983166035116825084
       items_189: 8201081582909886744
-      items_339: -1550823004853703030
+      items_422: 4745857232031159418
       items_217: -3209429344413848919
       items_42: 3158488010477605343
       items_223: -4055912437774249039
       items_39: 124106431076995637
       items_280: 3711129781536342010
       items_263: -450361279472710352
-      items_422: 4745857232031159418
+      items_339: -1550823004853703030
       items_74: -4063295180217184869
       items_100: 8344717679193547042
       items_102: 5755098471613179246
@@ -10896,6 +10959,7 @@ TextureImporter:
       items_131: 5846979971430347887
       items_81: 4292883687895924744
       items_203: -8878694685562031488
+      fireball4: 711269694
       items_83: -8295029410813222302
       items_368: -4203038676746835241
       items_53: 6234064350648681191
@@ -10952,7 +11016,9 @@ TextureImporter:
       items_117: -3753784414763703992
       items_268: 2392559344560956286
       items_414: -3761027240579630055
+      fireball2: 1956191557
       items_105: -1754823780530430466
+      fireball3: 936414400
       items_224: -8195587494142681365
       items_61: 8386005727647381285
       items_406: 1264728007664539966
@@ -11062,7 +11128,7 @@ TextureImporter:
       items_277: 2761496282796171072
       items_395: -8787760491722128426
       items_192: 5219045542264890561
-      items_290: -4850781349598404350
+      items_275: 1629762946634793544
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
