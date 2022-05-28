@@ -266,4 +266,11 @@ public class EnemyAi : MonoBehaviour
         }
 
     }
+
+    private void OnBecameInvisible() {
+        // once the knocked away enemy is off screen, destroy it
+        if (state == EnemyState.knockedAway) {
+            Destroy(gameObject);
+        }
+    }
 }
