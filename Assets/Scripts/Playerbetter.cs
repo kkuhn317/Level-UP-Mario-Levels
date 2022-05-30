@@ -218,6 +218,10 @@ public class Playerbetter : MonoBehaviour
                 transform.parent = null;
             }
 
+            if (hitRay.transform.gameObject.tag == "Damaging") {
+                damageMario();
+            }
+
         }
 
         // Ceiling detection
@@ -429,6 +433,10 @@ public class Playerbetter : MonoBehaviour
             if (damaged) {
                 return;
             }
+            // are we invincible mario?
+            if (starPower) {
+                return;
+            }
             damaged = true;
             if (powerupState == PowerupState.small) {
                 toDead();
@@ -479,6 +487,16 @@ public class Playerbetter : MonoBehaviour
         //        Destroy(gameObject);
         //    }
         //}            
+    }
+
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        // spikes
+        if (collision.gameObject.tag == "Damaging")
+        {
+            damageMario();
+        }
     }
 
     public void ChangePowerup(GameObject newMarioObject) {

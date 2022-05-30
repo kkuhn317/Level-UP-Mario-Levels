@@ -36,7 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\door.cs" />
+     <Compile Include="Assets\Scripts\door.cs" />
      <Compile Include="Assets\Scripts\powerup.cs" />
      <Compile Include="Assets\Scripts\flagpole.cs" />
      <Compile Include="Assets\Scripts\QuestionBlock.cs" />
@@ -58,18 +58,18 @@
      <Compile Include="Assets\Scripts\musicOverride.cs" />
      <Compile Include="Assets\Scripts\movingPlatform.cs" />
      <Compile Include="Assets\Scripts\Playerbetter.cs" />
-     <Compile Include="Assets\key.cs" />
+     <Compile Include="Assets\Scripts\key.cs" />
      <Compile Include="Assets\Scripts\Castle.cs" />
      <Compile Include="Assets\Scripts\FallDestroy.cs" />
+     <Compile Include="Assets\Scripts\pipeSpawner.cs" />
      <Compile Include="Assets\Scripts\enemies\DeadlyEnemy.cs" />
      <Compile Include="Assets\Scripts\Spring.cs" />
-     <Compile Include="Assets\starMoveOutward.cs" />
+     <Compile Include="Assets\Scripts\Effects\starMoveOutward.cs" />
      <Compile Include="Assets\Scripts\globalVariables.cs" />
      <Compile Include="Assets\Scripts\livesCounter.cs" />
      <Compile Include="Assets\Scripts\FallingBlock.cs" />
      <Compile Include="Assets\Scripts\enemies\koopa.cs" />
      <Compile Include="Assets\Scripts\Level Specific\fallingSpikeheadGoomba.cs" />
-     <Compile Include="Assets\pipeSpawner.cs" />
      <None Include="Assets\Graphics\mario colors.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.3f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
@@ -698,9 +698,6 @@
     <Reference Include="System.Xml.Serialization">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.3f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Animation.Editor">
-        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.InternalAPIEngineBridge.001">
         <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
     </Reference>
@@ -710,14 +707,50 @@
     <Reference Include="Unity.2D.PixelPerfect">
         <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Tilemap.Editor">
-        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="PsdPlugin">
         <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\PsdPlugin.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
         <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.IK.Editor">
+        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Path.Editor">
+        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Rider.Editor">
+        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.IK.Runtime">
+        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.AdaptivePerformance.Editor">
+        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.AdaptivePerformance.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Toolchain.Win-x86_64-Linux-x86_64">
+        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.Toolchain.Win-x86_64-Linux-x86_64.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.AdaptivePerformance">
+        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.AdaptivePerformance.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Common.Editor">
+        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Animation.Editor">
+        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Editor">
+        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
         <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
@@ -725,41 +758,38 @@
     <Reference Include="Unity.Sysroot.Linux_x86_64">
         <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.Sysroot.Linux_x86_64.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Profiling.Core">
+        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.Profiling.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Timeline">
         <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
         <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.AdaptivePerformance.Simulator.Extension">
+        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.AdaptivePerformance.Simulator.Extension.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Burst.Editor">
         <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.IK.Editor">
-        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
         <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Path.Editor">
-        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.2D.Psdimporter.Editor">
         <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.PlasticSCM.Editor">
-        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Rider.Editor">
-        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InternalAPIEditorBridge.001">
         <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UI">
-        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    <Reference Include="Unity.Subsystem.Registration">
+        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.Subsystem.Registration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.AdaptivePerformance.UI.Editor">
+        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.AdaptivePerformance.UI.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PlasticSCM.Editor">
+        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Services.Core">
         <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
@@ -767,8 +797,8 @@
     <Reference Include="Unity.Mathematics">
         <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.IK.Runtime">
-        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
+    <Reference Include="Unity.AdaptivePerformance.Simulator.Editor">
+        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.AdaptivePerformance.Simulator.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Services.Core.Analytics">
         <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
@@ -788,20 +818,14 @@
     <Reference Include="Unity.Timeline.Editor">
         <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Toolchain.Win-x86_64-Linux-x86_64">
-        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.Toolchain.Win-x86_64-Linux-x86_64.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.2D.Common.Runtime">
         <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Editor">
         <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Common.Editor">
-        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
+    <Reference Include="Unity.AdaptivePerformance.Profiler.Editor">
+        <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.AdaptivePerformance.Profiler.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Runtime">
         <HintPath>C:\Users\matt\OneDrive\Documents\GitHub\Level-UP-Mario-Levels\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>

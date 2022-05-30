@@ -113,6 +113,7 @@
 -define:ENABLE_TILEMAP
 -define:ENABLE_TIMELINE
 -define:ENABLE_LEGACY_INPUT_MANAGER
+-define:IL2CPP_LEGACY_API_PRESENT
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.3f1/Editor/Data/Managed/UnityEditor.Graphs.dll"
@@ -339,9 +340,9 @@
 -r:"Library/Bee/artifacts/500b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/500b0aE.dag/UnityEngine.TestRunner.ref.dll"
 -r:"Library/Bee/artifacts/500b0aE.dag/UnityEngine.UI.ref.dll"
-"Library/PackageCache/com.unity.sysroot@0.1.19-preview/Editor/AssemblyInfo.cs"
-"Library/PackageCache/com.unity.sysroot@0.1.19-preview/Editor/NiceIO.cs"
-"Library/PackageCache/com.unity.sysroot@0.1.19-preview/Editor/Unity.SysrootPackage.cs"
+"Library/PackageCache/com.unity.sysroot@2.0.2/Editor/AssemblyInfo.cs"
+"Library/PackageCache/com.unity.sysroot@2.0.2/Editor/NiceIO.cs"
+"Library/PackageCache/com.unity.sysroot@2.0.2/Editor/Unity.SysrootPackage.cs"
 -langversion:9.0
 
 /deterministic
