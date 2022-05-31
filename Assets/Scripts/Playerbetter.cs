@@ -477,16 +477,13 @@ public class Playerbetter : MonoBehaviour
 
 
 
-    private void OnTriggerEnter2D(Collider2D other) {
-
-        //if (other.gameObject.tag == "Powerup") {
-        //    Destroy(other.gameObject);
-        //    if (powerupState == PowerupState.small) {
-        //        GameObject newMario = Instantiate(BigMario, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), transform.rotation);
-        //        newMario.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity;
-        //        Destroy(gameObject);
-        //    }
-        //}            
+    void OnTriggerStay2D(Collider2D other)
+    {
+        // firebar, flame, etc
+        if (other.gameObject.tag == "Damaging")
+        {
+            damageMario();
+        }
     }
 
 

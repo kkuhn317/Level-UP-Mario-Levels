@@ -364,7 +364,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -372,6 +372,48 @@ TextureImporter:
       bones: []
       spriteID: 660c07e92c6a84f45a62149e50290cd6
       internalID: -1228979456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firebar
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 651
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68064b8d14172344d9d641c0c3221e78
+      internalID: -1314609670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burner
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 651
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23a23f5292ed4fe4fa0fd517394201c6
+      internalID: 1978610395
       vertices: []
       indices: 
       edges: []
@@ -390,12 +432,14 @@ TextureImporter:
       door: 1876404140
       key4: -186449430
       key3: -45322479
+      firebar: -1314609670
       spike: -1830081681
       doorunlocked: -536498471
       key1: -1209068561
       noteblock: -1228979456
       doorlocked: 82121349
       dooropen2: -1114524439
+      burner: 1978610395
       doorunlockedopen2: 1480654472
       doorunlockedopen1: 1573941114
       key2: 1412636378
