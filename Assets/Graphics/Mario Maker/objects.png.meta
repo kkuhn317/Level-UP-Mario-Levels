@@ -44,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
@@ -406,7 +406,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -414,6 +414,510 @@ TextureImporter:
       bones: []
       spriteID: 23a23f5292ed4fe4fa0fd517394201c6
       internalID: 1978610395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cbl0
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 736
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 368adbc3374bb914c950092e86f0104a
+      internalID: -1211909648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cbm0
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 736
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5d3368721f93b343b2a2617cdf49b47
+      internalID: 1930472112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cbr0
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 736
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29606a9ee3decf347a1bbf63e66ae298
+      internalID: -1020672919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cbl1
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 736
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ff26d69be6bc784e9c1a944cbdf4935
+      internalID: 937777579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cbm1
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 736
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72bb4d887ef409c49838c610a91d5be6
+      internalID: 1534995259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cbr1
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 736
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ada8cd397000a64c8e8b2a9fe13f931
+      internalID: -2140890553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cbl2
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 736
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b697e58adb4a8b7419d9ad2de9abf8c8
+      internalID: 545076065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cbm2
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 736
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df309c69eb5689744aaf6f1cff0ad37f
+      internalID: 311558252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cbr2
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 736
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d51a82795fb06c1479e65e33e60c1e4d
+      internalID: -573669727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cbl3
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 736
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51e44efa0e5053a4eb763fed98dd08de
+      internalID: 1319519662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cbm3
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 736
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 264d01a9335b353478a26d7c0a43af97
+      internalID: 1457536042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cbr3
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 736
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e80a66f6f02b064b8c4b0d8460f21ce
+      internalID: -2101456717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cbl4
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 736
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00d92455390face48897cc54dddb1da4
+      internalID: -584168402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cbm4
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 736
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d85c1fc4b7165c04f8a5fe132a8af70c
+      internalID: -177411389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cbr4
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 736
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b42d68b91fdc5bb419ccf12fb229cf6c
+      internalID: 2084544608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cbl5
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 736
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bda4653e08bd74744a495d8cd5d095a9
+      internalID: 1540794518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cbm5
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 736
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02961153397a6ae4ca5930890725cbb0
+      internalID: 1141613711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cbr5
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 736
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d975e22d2561874388fb7b2423f4ce5
+      internalID: -1499383332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cbl6
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 736
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41230918af2d51d42b7aa19b2699376a
+      internalID: -603014106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cbm6
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 736
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3e7cc0e613c501489485cfbec87e543
+      internalID: 2063153063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cbr6
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 736
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df7ce13012a08f74e9c613d0444d91b1
+      internalID: 107070090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cbl7
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 736
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92eaf6d74330e25418c4e45516d75827
+      internalID: -434102691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cbm7
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 736
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0678efc932e7b024698e7d30531f21bb
+      internalID: 1414827400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cbr7
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 736
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d209fb02c8ca394c8479675b2164577
+      internalID: -1590260403
       vertices: []
       indices: 
       edges: []
@@ -430,19 +934,43 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       door: 1876404140
+      cbl1: 937777579
       key4: -186449430
       key3: -45322479
+      cbr7: -1590260403
       firebar: -1314609670
+      cbl0: -1211909648
+      cbl7: -434102691
       spike: -1830081681
+      cbl2: 545076065
+      cbr1: -2140890553
       doorunlocked: -536498471
+      cbm0: 1930472112
+      cbm6: 2063153063
+      cbm5: 1141613711
       key1: -1209068561
       noteblock: -1228979456
       doorlocked: 82121349
+      cbr0: -1020672919
       dooropen2: -1114524439
+      cbl3: 1319519662
+      cbm4: -177411389
       burner: 1978610395
+      cbr4: 2084544608
+      cbm7: 1414827400
       doorunlockedopen2: 1480654472
+      cbr3: -2101456717
+      cbr5: -1499383332
+      cbr2: -573669727
+      cbm2: 311558252
+      cbl5: 1540794518
       doorunlockedopen1: 1573941114
       key2: 1412636378
+      cbm1: 1534995259
+      cbm3: 1457536042
+      cbr6: 107070090
+      cbl6: -603014106
+      cbl4: -584168402
       dooropen1: -758537462
   spritePackingTag: 
   pSDRemoveMatte: 0
