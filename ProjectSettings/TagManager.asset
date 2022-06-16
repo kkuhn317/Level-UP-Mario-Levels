@@ -16,6 +16,7 @@ TagManager:
   - Ground
   - Projectile
   - Damaging
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -31,7 +32,7 @@ TagManager:
   - Spring
   - Coin
   - Projectile
-  - 
+  - Special Enemy/Boss
   - 
   - 
   - 

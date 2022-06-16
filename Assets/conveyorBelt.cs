@@ -40,6 +40,7 @@ public class conveyorBelt : MonoBehaviour
         // do some weird movement to simulate a conveyor belt
         // still can't belive this actually works
         GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (!player) return;
         if (player.transform.parent == transform)
         {
             Vector3 pos = transform.position;

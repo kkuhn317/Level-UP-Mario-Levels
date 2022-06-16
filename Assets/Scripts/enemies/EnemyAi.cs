@@ -17,17 +17,27 @@ public class EnemyAi : MonoBehaviour
     public bool stayStill = false;
 
     public float enemyHeight;
+    public float enemyWidth = 1;
+
+    public float enemyMidadjustment = 0f;
 
     public bool canBeFireballed = true;
 
     public LayerMask floorMask;
     public LayerMask wallMask;
 
+    // THIS IS DISTANCE AWAY FROM SIDES
+    public float floorRaycastSpacing = 0.2f;
+    public float wallRaycastSpacing = 0.2f;
+
     private bool firstframe = true;
 
     private float adjDeltaTime;
 
-    private bool bouncedBack = false;
+
+    //private bool bounced = false;
+
+    private Vector2 normalScale;
 
     public enum EnemyState {
         
@@ -42,7 +52,7 @@ public class EnemyAi : MonoBehaviour
     void Start()
     {
         enabled = false;
-
+        normalScale = transform.localScale;
 
         //Fall();
     }
@@ -62,7 +72,7 @@ public class EnemyAi : MonoBehaviour
             UpdateEnemyPosition ();
         firstframe = false;
 
-        bouncedBack = false;
+        //bounced = false;
     }
 
     void UpdateEnemyPosition () {
@@ -72,31 +82,35 @@ public class EnemyAi : MonoBehaviour
 
         // check walls first
         if (state != EnemyState.knockedAway) {
-            if (velocity.x != 0)
-                    pos = CheckWalls (pos, -scale.x);
+            if (velocity.x != 0) {
+                pos = CheckWalls (pos, isWalkingLeft ? -1 : 1);
+            }
         }
 
         //print("adjDeltaTime: " + adjDeltaTime);
 
-        if (state == EnemyState.falling || state == EnemyState.knockedAway) {
-            
-            pos.y += velocity.y * adjDeltaTime;
+        //if (!bounced) {
 
-            velocity.y -= gravity * adjDeltaTime;
-        }
+            if (state == EnemyState.falling || state == EnemyState.knockedAway) {
+                
+                pos.y += velocity.y * adjDeltaTime;
 
-        if (isWalkingLeft) {
+                velocity.y -= gravity * adjDeltaTime;
+            }
 
-            pos.x -= velocity.x * adjDeltaTime;
+            if (isWalkingLeft) {
 
-            scale.x = 1;
+                pos.x -= velocity.x * adjDeltaTime;
 
-        } else {
+                scale.x = normalScale.x;
 
-            pos.x += velocity.x * adjDeltaTime;
+            } else {
 
-            scale.x = -1;
-        }
+                pos.x += velocity.x * adjDeltaTime;
+
+                scale.x = -normalScale.x;
+            }
+        //}
 
         // fix bug where enemy has y velocity but walking
         // making it walk in the air
@@ -117,7 +131,8 @@ public class EnemyAi : MonoBehaviour
 
 
             //if (velocity.x != 0)
-            //    pos = CheckWalls (pos, -scale.x);
+            //    pos = CheckWalls (pos, isWalkingLeft ? -1 : 1);
+
 
 
             if (DontFallOffLedges && state == EnemyState.walking) {
@@ -143,10 +158,11 @@ public class EnemyAi : MonoBehaviour
         //}
 
         float halfHeight = enemyHeight / 2;
+        float halfWidth = enemyWidth / 2;
 
-        Vector2 originLeft = new Vector2 (pos.x - 0.5f + 0.2f, pos.y - halfHeight);
+        Vector2 originLeft = new Vector2 (pos.x - halfWidth + floorRaycastSpacing, pos.y - halfHeight);
         Vector2 originMiddle = new Vector2 (pos.x, pos.y - (halfHeight + 0.01f));
-        Vector2 originRight = new Vector2 (pos.x + 0.5f - 0.2f, pos.y - halfHeight);
+        Vector2 originRight = new Vector2 (pos.x + halfWidth - floorRaycastSpacing, pos.y - halfHeight);
         //print("adjDeltaTime is:" + (adjDeltaTime));
         //print("Velocity is:" + velocity);
         RaycastHit2D groundLeft = Physics2D.Raycast (originLeft, Vector2.down, -velocity.y * adjDeltaTime, floorMask);
@@ -204,10 +220,11 @@ public class EnemyAi : MonoBehaviour
 
     RaycastHit2D RaycastWalls (Vector3 pos, float direction) {
         float halfHeight = enemyHeight / 2;
+        float halfWidth = enemyWidth / 2;
 
-        Vector2 originTop = new Vector2 (pos.x + direction * 0.5f, pos.y - halfHeight + 0.8f);
-        Vector2 originMiddle = new Vector2 (pos.x + direction * 0.5f, pos.y - halfHeight + .5f);
-        Vector2 originBottom = new Vector2 (pos.x + direction * 0.5f, pos.y - halfHeight + 0.2f);
+        Vector2 originTop = new Vector2 (pos.x + halfWidth, pos.y + halfHeight - wallRaycastSpacing);
+        Vector2 originMiddle = new Vector2 (pos.x + halfWidth, pos.y);
+        Vector2 originBottom = new Vector2 (pos.x + halfWidth, pos.y - halfHeight + wallRaycastSpacing);
 
         RaycastHit2D wallTop = Physics2D.Raycast (originTop, new Vector2 (direction, 0), velocity.x * adjDeltaTime, wallMask);
         RaycastHit2D wallMiddle = Physics2D.Raycast (originMiddle, new Vector2 (direction, 0), velocity.x * adjDeltaTime, wallMask);
@@ -233,41 +250,49 @@ public class EnemyAi : MonoBehaviour
     RaycastHit2D RaycastWallsBetter (Vector3 pos, float direction) {
         // use raycast all and don't count itself
         float halfHeight = enemyHeight / 2;
+        float halfWidth = enemyWidth / 2;
 
-        Vector2 originTop = new Vector2 (pos.x + direction * 0.5f, pos.y - halfHeight + 0.8f);
-        Vector2 originMiddle = new Vector2 (pos.x + direction * 0.5f, pos.y - halfHeight + .5f);
-        Vector2 originBottom = new Vector2 (pos.x + direction * 0.5f, pos.y - halfHeight + 0.2f);
+        Vector2 originTop = new Vector2 (pos.x + direction * halfWidth, pos.y + halfHeight - wallRaycastSpacing);
+        Vector2 originMiddle = new Vector2 (pos.x + direction * halfWidth, pos.y);
+        Vector2 originBottom = new Vector2 (pos.x + direction * halfWidth, pos.y - halfHeight + wallRaycastSpacing);
 
         RaycastHit2D[] wallTop = Physics2D.RaycastAll (originTop, new Vector2 (direction, 0), velocity.x * adjDeltaTime, wallMask);
         RaycastHit2D[] wallMiddle = Physics2D.RaycastAll (originMiddle, new Vector2 (direction, 0), velocity.x * adjDeltaTime, wallMask);
         RaycastHit2D[] wallBottom = Physics2D.RaycastAll (originBottom, new Vector2 (direction, 0), velocity.x * adjDeltaTime, wallMask);
 
-        // remove self from list
-        List<RaycastHit2D> hitRays = new List<RaycastHit2D> ();
+
+        // get shortest distance
+        float shortestDistance = float.MaxValue;
+        RaycastHit2D shortestRay = new RaycastHit2D ();
 
         foreach (RaycastHit2D hitRay in wallTop) {
             if (hitRay.collider != GetComponent<Collider2D> ()) {
-                hitRays.Add (hitRay);
+                if (hitRay.distance < shortestDistance) {
+                    shortestDistance = hitRay.distance;
+                    shortestRay = hitRay;
+                }
             }
         }
 
         foreach (RaycastHit2D hitRay in wallMiddle) {
             if (hitRay.collider != GetComponent<Collider2D> ()) {
-                hitRays.Add (hitRay);
+                if (hitRay.distance < shortestDistance) {
+                    shortestDistance = hitRay.distance;
+                    shortestRay = hitRay;
+                }
             }
         }
 
         foreach (RaycastHit2D hitRay in wallBottom) {
             if (hitRay.collider != GetComponent<Collider2D> ()) {
-                hitRays.Add (hitRay);
+                if (hitRay.distance < shortestDistance) {
+                    shortestDistance = hitRay.distance;
+                    shortestRay = hitRay;
+                }
             }
         }
 
-        if (hitRays.Count > 0) {
-            return hitRays[0];
-        }
-
-        return new RaycastHit2D ();
+        return shortestRay;
     }
 
 
@@ -285,59 +310,73 @@ public class EnemyAi : MonoBehaviour
 
         if (hitRay.collider.gameObject.tag == "Enemy") {
             EnemyAi otherEnemyAi = hitRay.collider.gameObject.GetComponent<EnemyAi>();
-            if (otherEnemyAi.isWalkingLeft == isWalkingLeft && !otherEnemyAi.stayStill && otherEnemyAi.velocity.x != 0)
-                // They are walking the same direction, so 
+
+            if (otherEnemyAi.isWalkingLeft == isWalkingLeft && !otherEnemyAi.stayStill && otherEnemyAi.velocity.x != 0) {
+                // They are walking the same direction. do some more checks
+                if (otherEnemyAi.checkOtherEnemies()) {
+                    isWalkingLeft = !isWalkingLeft;
+                    //bounced = true;
+                    //pos.x = hitRay.collider.bounds.center.x + (hitRay.collider.bounds.size.x/2 + 0.5f) * -direction;
+                    // TODO: make collisions between enemies look a bit better
+                }
                 return pos;
+                
+            }
 
             if (otherEnemyAi.state == EnemyState.knockedAway) {
                 // They are knocked away, so don't push them
                 return pos;
             }
+
             // test: set x position right next to the other enemy
-            pos.x = hitRay.collider.bounds.center.x + (hitRay.collider.bounds.size.x/2 + 0.5f) * -direction;
+            pos.x = hitRay.collider.bounds.center.x + (hitRay.collider.bounds.size.x/2 + enemyWidth / 2) * -direction;
             //print(pos.x);
         }
 
         if (!(hitRay.collider.gameObject.tag == "Enemy" && !checkEnemyCollision)) {
             isWalkingLeft = !isWalkingLeft;
-            if (!bouncedBack)
-                BounceEnemyBack(pos, -direction);
+            //bounced = true;
         }
 
         return pos;
 
     }
 
-    // Fixes multiple enemies being right next to each other
-    void BounceEnemyBack(Vector3 pos, float direction) {
-        bouncedBack = true;
-
-        //RaycastHit2D hitRay = RaycastWalls (pos, direction);
-        RaycastHit2D hitRay = RaycastWallsBetter (pos, direction);
-
-        if (hitRay.collider == null) {
-            return;
+    // return true if need to bounce back
+    bool checkOtherEnemies() {
+        // check if the other enemy is about to hit something
+        RaycastHit2D hit = RaycastWallsBetter (transform.position, isWalkingLeft ? -1 : 1);
+        if (hit.collider == null) {
+            // they are not about to hit anything
+            return false;
+        } else {
+            if (hit.collider.transform.tag != "Enemy") {
+                // they are about to hit something, but it is not an enemy
+                isWalkingLeft = !isWalkingLeft;
+                //bounced = true;
+                return true;
+            } else {
+                // they are about to hit an enemy
+                EnemyAi otherEnemyAi = hit.collider.gameObject.GetComponent<EnemyAi>();
+                if (otherEnemyAi.state == EnemyState.knockedAway) {
+                    // they are about to hit an enemy that is knocked away
+                    return false;
+                }
+                if (otherEnemyAi.isWalkingLeft == isWalkingLeft && !otherEnemyAi.stayStill && otherEnemyAi.velocity.x != 0) {
+                    // they are about to hit an enemy that is moving the same direction
+                    // check this next enemy too
+                    return otherEnemyAi.checkOtherEnemies();
+                } else {
+                    // they are about to hit an enemy that is moving the opposite direction
+                    otherEnemyAi.isWalkingLeft = !otherEnemyAi.isWalkingLeft;
+                    //otherEnemyAi.bounced = true;
+                    isWalkingLeft = !isWalkingLeft;
+                    //bounced = true;
+                    //transform.position = new Vector2(hit.collider.bounds.center.x + (hit.collider.bounds.size.x/2 + enemyWidth / 2) * (isWalkingLeft ? 1 : -1), transform.position.y);
+                    return true;
+                }
+            }
         }
-
-        //print (gameObject.name + " bounce back " + hitRay.collider.gameObject.name);
-
-        if (hitRay.collider.gameObject.tag == "Enemy") {
-            
-            EnemyAi otherEnemyAi = hitRay.collider.gameObject.GetComponent<EnemyAi>();
-            if (otherEnemyAi.isWalkingLeft == isWalkingLeft && !otherEnemyAi.stayStill && otherEnemyAi.velocity.x != 0)
-                // They are walking the same direction, so 
-                return;
-
-            // not next to each other, so bounce back
-            otherEnemyAi.BounceEnemyBack(otherEnemyAi.transform.position, direction);  // check the previous enemy too
-            otherEnemyAi.isWalkingLeft = !otherEnemyAi.isWalkingLeft;
-            // test: set x position of the other enemy right next to this one
-            otherEnemyAi.transform.position = new Vector3(pos.x + (hitRay.collider.bounds.size.x/2 + 0.5f) * direction, otherEnemyAi.transform.position.y, otherEnemyAi.transform.position.z);
-            
-            //print(pos.x);
-        }
-
-
     }
 
     void OnBecameVisible() {

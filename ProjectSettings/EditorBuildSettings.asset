@@ -6,21 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/GoombaPyramid.unity
-    guid: 256d8db99bbda6643ab493cac9befa4a
+    path: Assets/Scenes/Title.unity
+    guid: 730eef145fc856a4fa02185811552a36
   - enabled: 1
     path: Assets/Scenes/HowWillMarioEscape.unity
     guid: 1d5836ecaed363f46812c6e9e8cb5c84
+  - enabled: 1
+    path: Assets/Scenes/GoombaPyramid.unity
+    guid: 256d8db99bbda6643ab493cac9befa4a
   - enabled: 0
     path: Assets/Scenes/Level1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Lives.unity
     guid: be04868ff5ed20c4a9498d40de9e6269
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Win.unity
     guid: ed4c552f2a5601649be26a103f6f1538
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameOver.unity
     guid: 70c9b7ed09f96234192a3bea710fd534
   m_configObjects:

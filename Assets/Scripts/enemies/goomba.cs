@@ -12,6 +12,8 @@ public class goomba : MonoBehaviour
 
     public EnemyState state = EnemyState.walking;
 
+    public bool stompable = true;
+
     private bool shouldDie = false;
     private float deathTimer = 0;
     public float timeBeforeDestroy = 1.0f;
@@ -59,6 +61,12 @@ public class goomba : MonoBehaviour
 
     public void Crush () {
 
+        GetComponent<AudioSource>().Play();
+        
+        if (!stompable) {
+            return;
+        }
+
         state = EnemyState.crushed;
 
         EnemyAi enemyAi = GetComponent<EnemyAi>();
@@ -72,7 +80,7 @@ public class goomba : MonoBehaviour
 
         shouldDie = true;
 
-        GetComponent<AudioSource>().Play();
+        
     }
 
     void CheckCrushed () {
