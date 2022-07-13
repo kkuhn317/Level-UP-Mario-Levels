@@ -688,7 +688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1387128895296092713, guid: 984221b369edc2046b1367ff08c05bf4, type: 3}
       propertyPath: m_Offset.y
-      value: -0.562639
+      value: -0.062639
       objectReference: {fileID: 0}
     - target: {fileID: 1387128895296092715, guid: 984221b369edc2046b1367ff08c05bf4, type: 3}
       propertyPath: enemyHeight
@@ -716,7 +716,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1387128895296092726, guid: 984221b369edc2046b1367ff08c05bf4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 1387128895296092726, guid: 984221b369edc2046b1367ff08c05bf4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -748,6 +748,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1387128895296092726, guid: 984221b369edc2046b1367ff08c05bf4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053912965554827285, guid: 984221b369edc2046b1367ff08c05bf4, type: 3}
+      propertyPath: MinDistance
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 1387128895296092712}
   - component: {fileID: 1387128895296092724}
   - component: {fileID: 1387128895296092715}
-  - component: {fileID: 3053912965554827285}
+  - component: {fileID: 1456537953174554353}
   m_Layer: 9
-  m_Name: Green Shell
+  m_Name: Green Koopa
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,6 +33,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 27.69, y: 4.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: -230523085
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8421458170528590454, guid: 1dd057175ed18f84b8f36713f40abf13, type: 3}
+  m_Sprite: {fileID: -7537196482120660328, guid: 1dd057175ed18f84b8f36713f40abf13, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -91,7 +92,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &1387128895296092725
 Animator:
-  serializedVersion: 3
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -104,6 +105,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -121,10 +123,10 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.5}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.25}
     oldSize: {x: 1, y: 2}
     newSize: {x: 1, y: 1.5}
     adaptiveTilingThreshold: 0.5
@@ -167,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 051c463066b0f594ca37859335af3423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 1
+  state: 0
   walkingSpeed: 2
   movingShellSpeed: 10
   kickSound: {fileID: 8300000, guid: e6aace62cc8eb244fbfcd066ed3dd315, type: 3}
@@ -184,19 +186,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 60
-  velocity: {x: 0, y: 0}
+  velocity: {x: 2, y: 0}
   isWalkingLeft: 1
   DontFallOffLedges: 0
   checkEnemyCollision: 1
   stayStill: 0
-  enemyHeight: 2
+  enemyHeight: 1
+  enemyWidth: 1
+  enemyMidadjustment: 0
+  canBeFireballed: 1
   floorMask:
     serializedVersion: 2
     m_Bits: 1
   wallMask:
     serializedVersion: 2
     m_Bits: 2561
---- !u!82 &3053912965554827285
+  floorRaycastSpacing: 0.2
+  wallRaycastSpacing: 0.2
+  state: 1
+--- !u!82 &1456537953174554353
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

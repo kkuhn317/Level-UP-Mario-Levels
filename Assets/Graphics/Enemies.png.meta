@@ -639,8 +639,8 @@ TextureImporter:
         y: 192
         width: 32
         height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -660,8 +660,8 @@ TextureImporter:
         y: 192
         width: 32
         height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -723,8 +723,8 @@ TextureImporter:
         y: 192
         width: 32
         height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -744,8 +744,8 @@ TextureImporter:
         y: 192
         width: 32
         height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1417,7 +1417,7 @@ TextureImporter:
         width: 48
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -4107,14 +4107,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Enemies_152: -6209669611497975365
-      Enemies_141: -7294688021120211486
+      Enemies_144: -3183440200558587100
       Enemies_62: -4710835892303214055
       Enemies_33: 9099896256582322714
       Enemies_140: -3925346721563204372
       Enemies_129: -6154621009441377342
       Enemies_165: -6749314582007014872
-      Enemies_144: -3183440200558587100
       Enemies_60: 7418927152471405234
       Enemies_95: -4656416737252121297
       Enemies_55: -5449054242775794067
@@ -4186,12 +4184,12 @@ TextureImporter:
       Enemies_136: -562681637999226928
       Enemies_154: -4452606747806102095
       Enemies_162: -6394019181280219976
-      Enemies_123: 5197189315874054843
+      Enemies_135: -920002668226636742
       Enemies_89: 4587673724615464695
       Enemies_164: -2602228601257165919
       Enemies_40: -5557010403634338699
       Enemies_110: -3891519679325919375
-      Enemies_135: -920002668226636742
+      Enemies_123: 5197189315874054843
       Enemies_167: -2960778044091982143
       Enemies_38: 2884737313679868233
       Enemies_77: -3087958048477219219
@@ -4248,6 +4246,7 @@ TextureImporter:
       Enemies_93: 6292691625679946888
       Enemies_36: 724912592566366239
       Enemies_32: -4030233447086554269
+      Enemies_139: 6602413337398597364
       Enemies_52: -3753579385025995478
       Enemies_124: -3677388578715449969
       Enemies_15: 1511843784806208459
@@ -4256,22 +4255,23 @@ TextureImporter:
       Enemies_57: 450555567493972228
       Enemies_72: 2301194597526324844
       Enemies_107: 6760816455620728065
-      Enemies_158: -6287907087565448776
       Enemies_132: -5210086007282947767
+      Enemies_158: -6287907087565448776
       Enemies_160: 2305618141317633844
       Enemies_148: -8009513197434778597
       koopa2: -7537196482120660328
       Enemies_109: 5803252358176458923
       Enemies_59: -8072977402653731372
       Enemies_17: 615673380907259118
-      Enemies_49: -2213654343223091228
+      Enemies_152: -6209669611497975365
       Enemies_23: -731756946235510198
+      Enemies_49: -2213654343223091228
       Enemies_145: 8022138277773968514
       koopa4: -7945901444079236628
+      Enemies_141: -7294688021120211486
       Enemies_105: -6215373132702329084
-      Enemies_14: 5023289697677887148
       Enemies_76: -2045263686945575246
-      Enemies_139: 6602413337398597364
+      Enemies_14: 5023289697677887148
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

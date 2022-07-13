@@ -54,13 +54,13 @@ public class koopa : MonoBehaviour
             }
 
             if (playerscript.powerupState == Playerbetter.PowerupState.small) {
-                if (rb.position.y - 0.2 > transform.position.y - 0.3) {
+                if (rb.position.y - 0.2 > transform.position.y + 0.2) {
                     onStomped(other.gameObject);
                 } else {
                    onhitPlayer(other.gameObject);
                 }
             } else {
-                if (rb.position.y - 0.7 > transform.position.y - 0.3) {
+                if (rb.position.y - 0.7 > transform.position.y + 0.2) {
                     onStomped(other.gameObject);
                 } else {
                     onhitPlayer(other.gameObject);
@@ -122,6 +122,7 @@ public class koopa : MonoBehaviour
                 playerScript.damageMario();
                 break;
             case EnemyState.inShell:
+                audioSource.PlayOneShot(kickSound);
                 ToMovingShell(player.transform.position.x > transform.position.x);
                 break;
             case EnemyState.movingShell:
