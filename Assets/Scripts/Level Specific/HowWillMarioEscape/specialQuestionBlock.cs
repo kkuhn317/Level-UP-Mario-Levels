@@ -34,7 +34,7 @@ public class specialQuestionBlock : MonoBehaviour
 
     void moveSpinies() {
         foreach(GameObject spiny in spinies) {
-            spiny.GetComponent<EnemyAi>().stayStill = false;
+            spiny.GetComponent<EnemyAi>().movement = ObjectPhysics.ObjectMovement.sliding;
         }
     }
 }

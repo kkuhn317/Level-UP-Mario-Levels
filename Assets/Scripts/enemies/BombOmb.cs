@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class BombOmb : MonoBehaviour
+public class BombOmb : EnemyAi
 {
 
     public enum EnemyState {
@@ -16,22 +16,17 @@ public class BombOmb : MonoBehaviour
     public Vector2 kickForce;
 
     private Animator animator;
-    private EnemyAi enemyAi;
 
     private AudioSource audioSource;
-
-    public AudioClip kickSound;
 
     public float explodeTime = 4f;
 
     public float explodeRadius = 3f;
     public GameObject explosionObject;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         animator = GetComponent<Animator>();
-        enemyAi = GetComponent<EnemyAi>();
         audioSource = GetComponent<AudioSource>();
 
         switch(state) {
@@ -44,42 +39,21 @@ public class BombOmb : MonoBehaviour
         }
     }
 
-    void Update()
+    protected override void Update()
     {
+        base.Update();
         if (state == EnemyState.primed) {
             // if y velocity is 0, then we are on the ground
             // so stop x velocity
-            if (enemyAi.velocity.y == 0) {
-                enemyAi.velocity.x = 0;
+            if (velocity.y == 0) {
+                velocity.x = 0;
             }
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag == "Player") {
-            Playerbetter playerscript = other.gameObject.GetComponent<Playerbetter>();
-            Rigidbody2D rb = other.gameObject.GetComponent<Rigidbody2D>();
-
-            if (playerscript.starPower) {
-                audioSource.PlayOneShot(kickSound);
-                GetComponent<EnemyAi>().KnockAway(other.transform.position.x > transform.position.x);
-                return;
-            }
-
-            if (playerscript.powerupState == Playerbetter.PowerupState.small) {
-                if (rb.position.y - 0.2 > transform.position.y + 0.2) {
-                    onStomped(other.gameObject);
-                } else {
-                   onhitPlayer(other.gameObject);
-                }
-            } else {
-                if (rb.position.y - 0.7 > transform.position.y + 0.2) {
-                    onStomped(other.gameObject);
-                } else {
-                    onhitPlayer(other.gameObject);
-                }
-            }
-        } if (other.gameObject.tag == "Projectile") {
+    protected override void touchNonPlayer(GameObject other)
+    {
+        if (other.gameObject.tag == "Projectile") {
             GameObject ball = other.gameObject;
             if (ball.GetComponent<fireball>()) {
                 switch (state) {
@@ -106,11 +80,11 @@ public class BombOmb : MonoBehaviour
             Invoke("explode", explodeTime);
         }
         
-        enemyAi.velocity = new Vector2(0, enemyAi.velocity.y);
+        velocity = new Vector2(0, velocity.y);
     }
 
 
-    private void onStomped(GameObject player) {
+    protected override void hitByStomp(GameObject player) {
         Playerbetter playerScript = player.GetComponent<Playerbetter>();
         switch (state) {
             case EnemyState.walking:
@@ -124,7 +98,7 @@ public class BombOmb : MonoBehaviour
         }
     }
 
-    private void onhitPlayer(GameObject player) {
+    protected override void hitOnSide(GameObject player) {
         Playerbetter playerScript = player.GetComponent<Playerbetter>();
         switch (state) {
             case EnemyState.walking:
@@ -137,10 +111,10 @@ public class BombOmb : MonoBehaviour
     }
 
     private void kickBomb(bool direction) {
-        audioSource.PlayOneShot(kickSound);
-        enemyAi.state = EnemyAi.EnemyState.falling;
-        enemyAi.isWalkingLeft = direction;
-        enemyAi.velocity = new Vector2(kickForce.x, kickForce.y);
+        audioSource.PlayOneShot(knockAwaySound);
+        objectState = ObjectState.falling;
+        movingLeft = direction;
+        velocity = new Vector2(kickForce.x, kickForce.y);
     }
 
     private void explode() {
@@ -160,7 +134,7 @@ public class BombOmb : MonoBehaviour
                     hitCollider.gameObject.GetComponent<Playerbetter>().damageMario();
                     break;
                 case "Enemy":
-                    hitCollider.gameObject.GetComponent<EnemyAi>().KnockAwaySound(kickSound, transform.position.x > hitCollider.transform.position.x);
+                    hitCollider.gameObject.GetComponent<EnemyAi>().KnockAway(transform.position.x > hitCollider.transform.position.x);
                     break;
             }
 

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5867611453485960043}
   - component: {fileID: 5867611453485960040}
   - component: {fileID: 5867611453485960042}
-  - component: {fileID: 5867611453485960039}
   - component: {fileID: 8492343587299579194}
   - component: {fileID: 6051213223584817656}
   m_Layer: 13
@@ -149,21 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18461d5f627e1314d9ec2a8f328ddb06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePowerScript: {fileID: 0}
-  kickSound: {fileID: 8300000, guid: e6aace62cc8eb244fbfcd066ed3dd315, type: 3}
-  hitWallSound: {fileID: 8300000, guid: efb6a10e74f0c464b830bc9de81162da, type: 3}
---- !u!114 &5867611453485960039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5867611453485960041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2692932a23029c148ad13f0d3d99a18d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   movingLeft: 0
   velocity: {x: 12, y: -2}
   gravity: 60
@@ -176,29 +160,16 @@ MonoBehaviour:
     m_Bits: 1
   wallMask:
     serializedVersion: 2
-    m_Bits: 2561
-  onFloorTouch:
-    m_PersistentCalls:
-      m_Calls: []
-  onWallTouch:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5867611453485960042}
-        m_TargetAssemblyTypeName: fireball, Assembly-CSharp
-        m_MethodName: deleteFireball
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  checkEnemyCollision: 0
-  state: 0
+    m_Bits: 2049
+  checkObjectCollision: 1
+  DontFallOffLedges: 0
+  flipObject: 1
+  knockAwaySound: {fileID: 0}
+  objectState: 0
   movement: 2
-  bounceHeight: 12
+  bounceHeight: 10
+  firePowerScript: {fileID: 0}
+  hitWallSound: {fileID: 8300000, guid: efb6a10e74f0c464b830bc9de81162da, type: 3}
 --- !u!82 &8492343587299579194
 AudioSource:
   m_ObjectHideFlags: 0

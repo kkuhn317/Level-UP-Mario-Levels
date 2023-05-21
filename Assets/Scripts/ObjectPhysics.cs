@@ -5,50 +5,80 @@ using UnityEngine.Events;
 
 public class ObjectPhysics : MonoBehaviour
 {
-    // IMPORTANT!!
-    // TODO: Make enemies, and maybe mario and items use this to reduce code duplication
 
-    public bool movingLeft;
-    public Vector2 velocity;
+    [Header("Object Physics")]
 
-    public float gravity;
+    public bool movingLeft = true;
+    public Vector2 velocity = new Vector2(2,0);
 
-    public float width;
-    public float height;
+    public float gravity = 60f;
+
+    public float width = 1;
+    public float height = 1;
 
     // THIS IS DISTANCE AWAY FROM SIDES
-    public float floorRaycastSpacing;
-    public float wallRaycastSpacing;
+    public float floorRaycastSpacing = 0.2f;
+    public float wallRaycastSpacing = 0.2f;
 
     public LayerMask floorMask;
     public LayerMask wallMask;
 
-    [SerializeField] UnityEvent onFloorTouch;
-    [SerializeField] UnityEvent onWallTouch;
 
-    public bool checkEnemyCollision;
+    // should mostly be true, except for things like moving koopa shells
+    public bool checkObjectCollision = true;
+
+    public bool DontFallOffLedges = false;
+
+
+    // this is possible, but i'd say to just put these in the objects that actually need them
+    //[SerializeField] UnityEvent onFloorTouch;
+    //[SerializeField] UnityEvent onWallTouch;
+
+    public bool flipObject = true;
+    private Vector2 normalScale;
+
+    private float adjDeltaTime;
+
+    private bool firstframe = true;
 
     public enum ObjectState {
         falling,
-        walking
+        walking,
+        knockedAway
     }
+
+    public AudioClip knockAwaySound;
 
     public enum ObjectMovement {
         still,      // not moving at all
         sliding,    // falling and sliding
-        bouncing    // falling and bouncing (never in walking state)
+        bouncing    // falling and bouncing (never in walking objectState)
 
     }
 
-    public ObjectState state = ObjectState.falling;
+    public ObjectState objectState = ObjectState.falling;
     public ObjectMovement movement = ObjectMovement.sliding;
 
     public float bounceHeight;
 
-    void Update()
+    protected virtual void Start()
     {
-        if (movement != ObjectMovement.still)
-            UpdatePosition();
+        normalScale = transform.localScale;
+    }
+
+    protected virtual void Update()
+    {
+        adjDeltaTime = Time.deltaTime;
+
+        if (adjDeltaTime > 0.1f) {
+            adjDeltaTime = 0f;  // lag spike fix
+            //print("lagging!");
+        }
+
+        if ((!(movement == ObjectMovement.still) || objectState == ObjectState.knockedAway) && !firstframe)
+            UpdatePosition ();
+        firstframe = false;
+
     }
 
     public void UpdatePosition () {
@@ -56,32 +86,52 @@ public class ObjectPhysics : MonoBehaviour
         Vector3 pos = transform.position;
         Vector3 scale = transform.localScale;
 
-        if (state == ObjectState.falling) {
-            
-            pos.y += velocity.y * Time.deltaTime;
+        // check walls first
+        if (objectState != ObjectState.knockedAway) {
+            if (velocity.x != 0) {
+                CheckWalls (pos, movingLeft ? -1 : 1);
+            }
+        }
 
-            velocity.y -= gravity * Time.deltaTime;
+        if (objectState == ObjectState.falling || objectState == ObjectState.knockedAway) {
+            
+            pos.y += velocity.y * adjDeltaTime;
+
+            velocity.y -= gravity * adjDeltaTime;
         }
 
         if (movingLeft) {
 
-            pos.x -= velocity.x * Time.deltaTime;
+            pos.x -= velocity.x * adjDeltaTime;
 
-            scale.x = 1;
+            if (flipObject)
+                scale.x = normalScale.x;
 
         } else {
 
-            pos.x += velocity.x * Time.deltaTime;
+            pos.x += velocity.x * adjDeltaTime;
 
-            scale.x = -1;
+            if (flipObject)
+                scale.x = -normalScale.x;
         }
 
-
-        if (velocity.y <= 0) {
-            pos = CheckGround (pos);
+        // fix bug where object has y velocity but walking
+        // making it walk in the air
+        if (objectState == ObjectState.walking) {
+            velocity.y = 0;
         }
 
-        CheckWalls (pos, -scale.x);
+        if (objectState != ObjectState.knockedAway) {
+
+            if (velocity.y <= 0) {
+                pos = CheckGround (pos);
+            }
+
+
+            if (DontFallOffLedges && objectState == ObjectState.walking) {
+                CheckLedges(pos);
+            }
+        }
 
         transform.position = pos;
         transform.localScale = scale;
@@ -95,41 +145,51 @@ public class ObjectPhysics : MonoBehaviour
         Vector2 originLeft = new Vector2 (pos.x - halfWidth + floorRaycastSpacing, pos.y - halfHeight);
         Vector2 originMiddle = new Vector2 (pos.x, pos.y - halfHeight);
         Vector2 originRight = new Vector2 (pos.x + halfWidth - floorRaycastSpacing, pos.y - halfHeight);
-        //print("Time.deltaTime is:" + (Time.deltaTime));
+        //print("adjDeltaTime is:" + (adjDeltaTime));
         //print("Velocity is:" + velocity);
-        RaycastHit2D groundLeft = Physics2D.Raycast (originLeft, Vector2.down, -velocity.y * Time.deltaTime, floorMask);
-        RaycastHit2D groundMiddle = Physics2D.Raycast (originMiddle, Vector2.down, -velocity.y * Time.deltaTime, floorMask);
-        RaycastHit2D groundRight = Physics2D.Raycast (originRight, Vector2.down, -velocity.y * Time.deltaTime, floorMask);
+        RaycastHit2D[] groundLeft = Physics2D.RaycastAll (originLeft, Vector2.down, -velocity.y * adjDeltaTime + .02f, floorMask);
+        RaycastHit2D[] groundMiddle = Physics2D.RaycastAll (originMiddle, Vector2.down, -velocity.y * adjDeltaTime + .02f, floorMask);
+        RaycastHit2D[] groundRight = Physics2D.RaycastAll (originRight, Vector2.down, -velocity.y * adjDeltaTime + .02f, floorMask);
 
-        if (groundLeft.collider != null || groundMiddle.collider != null || groundRight.collider != null) {
 
-            RaycastHit2D hitRay = groundLeft;
+        RaycastHit2D[][] groundCollides = {groundLeft, groundMiddle, groundRight};
 
-            if (groundLeft) {
-                hitRay = groundLeft;
-            } else if (groundMiddle) {
-                hitRay = groundMiddle;
-            } else if (groundRight) {
-                hitRay = groundRight;
+
+        // get shortest distance
+        float shortestDistance = float.MaxValue;
+        RaycastHit2D shortestRay = new RaycastHit2D ();
+        Collider2D thisCollider = GetComponent<Collider2D> ();
+
+        foreach (RaycastHit2D[] groundCols in groundCollides) {
+            foreach (RaycastHit2D hitRay in groundCols) {
+                if (hitRay.collider != thisCollider) {
+                    if (hitRay.collider.gameObject.GetComponent<ObjectPhysics> ()) {
+                        if (!checkifObjectCollideValid(hitRay.collider.gameObject.GetComponent<ObjectPhysics> ())) {
+                            continue;
+                        }
+                    }
+                    if (hitRay.distance < shortestDistance) {
+                        shortestDistance = hitRay.distance;
+                        shortestRay = hitRay;
+                    }
+                }
             }
+        }
 
-            //pos.y = hitRay.collider.bounds.center.y + hitRay.collider.bounds.size.y / 2 + halfHeight;
-            pos.y = hitRay.point.y + halfHeight;
+        if (shortestRay) {
+
+            pos.y = shortestRay.point.y + halfHeight;
             velocity.y = 0;
 
             if (movement == ObjectMovement.sliding) {
-                state = ObjectState.walking;
+                objectState = ObjectState.walking;
             } else if (movement == ObjectMovement.bouncing) {
                 velocity.y = bounceHeight;
             }
 
-            onFloorTouch.Invoke();
-
-            //print("hit" + gameObject.name);
-
         } else {
 
-            if (state != ObjectState.falling) {
+            if (objectState != ObjectState.falling) {
 
                 Fall ();
             }
@@ -137,8 +197,8 @@ public class ObjectPhysics : MonoBehaviour
         return pos;
     }
 
-    void CheckWalls (Vector3 pos, float direction) {
-
+    RaycastHit2D RaycastWalls (Vector3 pos, float direction) {
+        // use raycast all and don't count itself
         float halfHeight = height / 2;
         float halfWidth = width / 2;
 
@@ -146,52 +206,128 @@ public class ObjectPhysics : MonoBehaviour
         Vector2 originMiddle = new Vector2 (pos.x + direction * halfWidth, pos.y);
         Vector2 originBottom = new Vector2 (pos.x + direction * halfWidth, pos.y - halfHeight + wallRaycastSpacing);
 
-        RaycastHit2D wallTop = Physics2D.Raycast (originTop, new Vector2 (direction, 0), velocity.x * Time.deltaTime, wallMask);
-        RaycastHit2D wallMiddle = Physics2D.Raycast (originMiddle, new Vector2 (direction, 0), velocity.x * Time.deltaTime, wallMask);
-        RaycastHit2D wallBottom = Physics2D.Raycast (originBottom, new Vector2 (direction, 0), velocity.x * Time.deltaTime, wallMask);
+        RaycastHit2D[] wallTop = Physics2D.RaycastAll (originTop, new Vector2 (direction, 0), velocity.x * adjDeltaTime, wallMask);
+        RaycastHit2D[] wallMiddle = Physics2D.RaycastAll (originMiddle, new Vector2 (direction, 0), velocity.x * adjDeltaTime, wallMask);
+        RaycastHit2D[] wallBottom = Physics2D.RaycastAll (originBottom, new Vector2 (direction, 0), velocity.x * adjDeltaTime, wallMask);
 
-        if (wallTop.collider != null || wallMiddle.collider != null || wallBottom.collider != null) {
+        RaycastHit2D[][] wallCollides = {wallTop, wallMiddle, wallBottom};
 
-            RaycastHit2D hitRay = wallTop;
 
-            if (wallTop) {
-                hitRay = wallTop;
-            } else if (wallMiddle) {
-                hitRay = wallMiddle;
-            } else if (wallBottom) {
-                hitRay = wallBottom;
+        // get shortest distance
+        float shortestDistance = float.MaxValue;
+        RaycastHit2D shortestRay = new RaycastHit2D ();
+        Collider2D thisCollider = GetComponent<Collider2D> ();
+
+        foreach (RaycastHit2D[] wallCols in wallCollides) {
+            foreach (RaycastHit2D hitRay in wallCols) {
+                if (hitRay.collider != thisCollider) {
+                    if (hitRay.collider.gameObject.GetComponent<ObjectPhysics> ()) {
+                        if (!checkifObjectCollideValid(hitRay.collider.gameObject.GetComponent<ObjectPhysics> ())) {
+                            continue;
+                        }
+                    }
+                    if (hitRay.distance < shortestDistance) {
+                        shortestDistance = hitRay.distance;
+                        shortestRay = hitRay;
+                    }
+                }
             }
-
-            // remove this part once enemies use this script for physics
-            if (hitRay.collider.gameObject.tag == "Enemy") {
-                EnemyAi otherEnemyAi = hitRay.collider.gameObject.GetComponent<EnemyAi>();
-                if (otherEnemyAi.isWalkingLeft == movingLeft && !otherEnemyAi.stayStill && otherEnemyAi.velocity.x != 0)
-                    // They are walking the same direction, so 
-                    return;
-            }
-
-            ObjectPhysics otherObjectPhysics = hitRay.collider.gameObject.GetComponent<ObjectPhysics>();
-            if (otherObjectPhysics != null) {
-                if (otherObjectPhysics.movingLeft == movingLeft && otherObjectPhysics.movement != ObjectMovement.still && otherObjectPhysics.velocity.x != 0)
-                    // They are moving the same direction, so 
-                    return;
-            }
-
-
-            if (!(hitRay.collider.gameObject.tag == "Enemy" && !checkEnemyCollision)) {
-                movingLeft = !movingLeft;
-                onWallTouch.Invoke();
-            }
-
         }
+
+        return shortestRay;
+    }
+
+    private bool checkifObjectCollideValid (ObjectPhysics other) {
+        if (!checkObjectCollision) {
+            //print("hit object physics while I am turned off");
+            return false;
+        }
+
+        if (!other.checkObjectCollision) {
+            //print("hit object physics while the other one is turned off");
+            return false;
+        }
+
+        return true;
+    }
+
+
+    public virtual bool CheckWalls (Vector3 pos, float direction) {
+
+        //RaycastHit2D hitRay = RaycastWalls (pos, direction);
+        RaycastHit2D hitRay = RaycastWalls (pos, direction);
+
+        if (hitRay.collider == null) {
+            return false;
+        }
+
+        // check if the gameobject we hit is also an objectphysics
+        if (hitRay.collider.gameObject.GetComponent<ObjectPhysics> () != null) {
+            ObjectPhysics other = hitRay.collider.gameObject.GetComponent<ObjectPhysics> ();
+
+            //probably this checking should come in the raycast walls function
+            if (other.objectState == ObjectState.knockedAway) {
+                // They are knocked away, so we can walk through them
+                return false;
+            }
+
+            // TODO: Implement proper object collision
+        }
+
+        // hit something, so bounce off
+        movingLeft = !movingLeft;
+        return true;
+
+    }
+
+    void CheckLedges(Vector3 pos) {
+        float halfHeight = height / 2;
+        float halfWidth = width / 2;
+
+        Vector2 origin;
+
+        if (movingLeft) 
+            origin = new Vector2 (pos.x - halfWidth, pos.y - halfHeight);
+        else
+            origin = new Vector2 (pos.x + halfWidth, pos.y - halfHeight);
+
+        RaycastHit2D ground = Physics2D.Raycast (origin, Vector2.down, 0.5f, floorMask);
+
+        if (!ground) {
+            movingLeft = !movingLeft;
+        }
+
     }
 
     void Fall () {
 
         velocity.y = 0;
 
-        state = ObjectState.falling;
+        objectState = ObjectState.falling;
 
+    }
+
+    public void KnockAway(bool direction) {
+        if (objectState != ObjectState.knockedAway) {
+            GetComponent<SpriteRenderer>().flipY = true;
+            objectState = ObjectState.knockedAway;
+            velocity.y = 5;
+            velocity.x = 5;
+            movingLeft = direction;
+            GetComponent<Collider2D>().enabled = false;
+            transform.rotation = Quaternion.identity;
+            // play sound
+            if (knockAwaySound != null && GetComponent<AudioSource>() != null) {
+                GetComponent<AudioSource>().PlayOneShot(knockAwaySound);
+            }
+        }
+    }
+
+    private void OnBecameInvisible() {
+        // once the knocked away object is off screen, destroy it
+        if (objectState == ObjectState.knockedAway) {
+            Destroy(gameObject);
+        }
     }
 
     private void OnDrawGizmos() {

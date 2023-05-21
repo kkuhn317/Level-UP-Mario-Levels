@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6990444735419437990}
   - component: {fileID: 6990444735420478770}
   - component: {fileID: 1504565530322253041}
-  - component: {fileID: 6990444735361535531}
   - component: {fileID: 1504565530322253043}
   - component: {fileID: 1504565530322253040}
   m_Layer: 9
@@ -149,39 +148,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e88e8d1869168f4488dcb3789066a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 0
-  kickForce: {x: 5, y: 10}
-  kickSound: {fileID: 8300000, guid: e6aace62cc8eb244fbfcd066ed3dd315, type: 3}
-  explodeTime: 4
-  explodeRadius: 3
-  explosionObject: {fileID: 1420006679389223119, guid: b57cb5956f1137c40898901f2195fa22, type: 3}
---- !u!114 &6990444735361535531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6990444735423900944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e26c4b5556259a44ea4b5cb601938692, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravity: 60
+  movingLeft: 1
   velocity: {x: 2, y: 0}
-  isWalkingLeft: 1
-  DontFallOffLedges: 0
-  checkEnemyCollision: 1
-  stayStill: 0
-  enemyHeight: 1
-  canBeFireballed: 0
+  gravity: 60
+  floorRaycastSpacing: 0.2
+  wallRaycastSpacing: 0.2
   floorMask:
     serializedVersion: 2
     m_Bits: 1
   wallMask:
     serializedVersion: 2
     m_Bits: 2561
-  state: 1
+  DontFallOffLedges: 0
+  flipObject: 1
+  knockAwaySound: {fileID: 8300000, guid: e6aace62cc8eb244fbfcd066ed3dd315, type: 3}
+  objectState: 0
+  movement: 1
+  bounceHeight: 0
+  canBeFireballed: 0
+  stompHeight: 0.2
+  state: 0
+  kickForce: {x: 5, y: 10}
+  explodeTime: 4
+  explodeRadius: 3
+  explosionObject: {fileID: 1420006679389223119, guid: b57cb5956f1137c40898901f2195fa22, type: 3}
 --- !u!82 &1504565530322253043
 AudioSource:
   m_ObjectHideFlags: 0

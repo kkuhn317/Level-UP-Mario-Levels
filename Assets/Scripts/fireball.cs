@@ -2,43 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class fireball : MonoBehaviour
+public class fireball : ObjectPhysics
 {
 
     public firePower firePowerScript;
-
-    public AudioClip kickSound;
     public AudioClip hitWallSound;
 
     bool hitEnemy = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (other.gameObject.tag == "Enemy" && !hitEnemy)
+        if (other.gameObject.GetComponent<EnemyAi>() && !hitEnemy)
         {
             if (other.gameObject.GetComponent<EnemyAi>().canBeFireballed) {
                 hitEnemy = true;
-                bool direction = GetComponent<ObjectPhysics>().movingLeft;
-                other.gameObject.GetComponent<EnemyAi>().KnockAway(direction);
-                GetComponent<AudioSource>().PlayOneShot(kickSound);
+                other.gameObject.GetComponent<EnemyAi>().KnockAway(movingLeft);
                 deleteFireball();
             } else {
                 hitWall();
             }
         }
+    }
+
+    public override bool CheckWalls(Vector3 pos, float direction)
+    {
+        bool hit = base.CheckWalls(pos, direction);
+        if (hit) {
+            hitWall();
+        }
+        return hit;
     }
 
     public void hitWall()
@@ -56,7 +49,7 @@ public class fireball : MonoBehaviour
         // let sounds play before deleting
         GetComponent<Collider2D>().enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;
-        GetComponent<ObjectPhysics>().enabled = false;
+        movement = ObjectMovement.still;
         Destroy(gameObject, 2);
     }
 

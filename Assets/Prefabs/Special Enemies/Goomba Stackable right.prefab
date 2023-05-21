@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3060970727247111551}
   - component: {fileID: 3060970727250398829}
   - component: {fileID: 3060970727251470585}
-  - component: {fileID: 3060970727293621216}
   - component: {fileID: 2137990220089549064}
   - component: {fileID: 6888403769209022776}
   m_Layer: 9
@@ -157,31 +156,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &3060970727293621216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3060970727256436955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e26c4b5556259a44ea4b5cb601938692, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravity: 60
-  velocity: {x: 2, y: 0}
-  isWalkingLeft: 0
-  DontFallOffLedges: 0
-  checkEnemyCollision: 1
-  stayStill: 0
-  enemyHeight: 1.01
-  floorMask:
-    serializedVersion: 2
-    m_Bits: 513
-  wallMask:
-    serializedVersion: 2
-    m_Bits: 2561
 --- !u!114 &2137990220089549064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,9 +168,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48eaab8d849b1c24cb6f7af67e1eb0af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movingLeft: 0
+  velocity: {x: 2, y: 0}
+  gravity: 60
+  floorRaycastSpacing: 0.2
+  wallRaycastSpacing: 0.2
+  floorMask:
+    serializedVersion: 2
+    m_Bits: 513
+  wallMask:
+    serializedVersion: 2
+    m_Bits: 2561
+  checkObjectCollision: 1
+  DontFallOffLedges: 0
+  flipObject: 1
+  knockAwaySound: {fileID: 8300000, guid: e6aace62cc8eb244fbfcd066ed3dd315, type: 3}
+  objectState: 0
+  movement: 1
+  bounceHeight: 0
+  canBeFireballed: 1
+  stompHeight: 0.2
   state: 0
+  stompable: 1
   timeBeforeDestroy: 1
-  kickSound: {fileID: 8300000, guid: e6aace62cc8eb244fbfcd066ed3dd315, type: 3}
 --- !u!82 &6888403769209022776
 AudioSource:
   m_ObjectHideFlags: 0

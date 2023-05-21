@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3218381274109829676}
   - component: {fileID: 3218381274109829666}
   - component: {fileID: 3341420539782037665}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Firebar ball
   m_TagString: Damaging
   m_Icon: {fileID: 0}

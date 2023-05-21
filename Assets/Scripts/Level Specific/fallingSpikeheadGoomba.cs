@@ -2,39 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class fallingSpikeheadGoomba : MonoBehaviour
+public class fallingSpikeheadGoomba : EnemyAi
 {
     public bool deadly = true;
 
-    public AudioClip kickSound;
-    // Start is called before the first frame update
-    void Start()
+    protected override void Update()
     {
-        
-    }
+        base.Update();
 
-    void Update()
-    {
-        if (!GetComponent<EnemyAi>().stayStill && GetComponent<EnemyAi>().velocity.y == 0) {
+        if (movement != ObjectMovement.still && velocity.y == 0) {
             deadly = false;
         } else {
             deadly = true;
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag == "Player") {
-            Playerbetter playerscript = other.gameObject.GetComponent<Playerbetter>();
+    protected override void hitByPlayer(GameObject player)
+    {
+        Playerbetter playerscript = player.GetComponent<Playerbetter>();
 
-            if (playerscript.starPower || !deadly) {
-                GetComponent<AudioSource>().PlayOneShot(kickSound);
-                GetComponent<EnemyAi>().KnockAway(other.transform.position.x > transform.position.x);
-            } else {
-                playerscript.damageMario();
-            }
-            
+        if (playerscript.starPower || !deadly) {
+            KnockAway(player.transform.position.x > transform.position.x);
+        } else {
+            playerscript.damageMario();
         }
+    }
 
+    public void fallDown() {
+        movement = ObjectMovement.sliding;
     }
 
 }

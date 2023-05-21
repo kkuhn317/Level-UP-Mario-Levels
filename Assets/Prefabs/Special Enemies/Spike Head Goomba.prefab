@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 3060970727251470585}
   - component: {fileID: 3060970727293621216}
   - component: {fileID: 6888403769209022776}
-  - component: {fileID: -1015535062181839549}
   m_Layer: 9
   m_Name: Spike Head Goomba
   m_TagString: Enemy
@@ -33,6 +32,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 21, y: 2, z: -1.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -91,7 +91,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &3060970727247111551
 Animator:
-  serializedVersion: 3
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -104,6 +104,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -167,19 +168,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e26c4b5556259a44ea4b5cb601938692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 60
+  movingLeft: 1
   velocity: {x: 2, y: 0}
-  isWalkingLeft: 1
-  DontFallOffLedges: 0
-  checkEnemyCollision: 1
-  stayStill: 1
-  enemyHeight: 1.5625
+  gravity: 60
+  width: 1
+  height: 1
+  floorRaycastSpacing: 0.2
+  wallRaycastSpacing: 0.2
   floorMask:
     serializedVersion: 2
     m_Bits: 1
   wallMask:
     serializedVersion: 2
     m_Bits: 2561
+  checkObjectCollision: 1
+  DontFallOffLedges: 0
+  flipObject: 1
+  knockAwaySound: {fileID: 8300000, guid: e6aace62cc8eb244fbfcd066ed3dd315, type: 3}
+  objectState: 0
+  movement: 1
+  bounceHeight: 0
+  canBeFireballed: 1
+  stompHeight: 0.2
 --- !u!82 &6888403769209022776
 AudioSource:
   m_ObjectHideFlags: 0
@@ -276,16 +286,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-1015535062181839549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3060970727256436955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 692216c1e16dba245a0ba00462391d66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  kickSound: {fileID: 8300000, guid: e6aace62cc8eb244fbfcd066ed3dd315, type: 3}

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class goomba : MonoBehaviour
+public class goomba : EnemyAi
 {
 
     public enum EnemyState {
@@ -18,45 +18,16 @@ public class goomba : MonoBehaviour
     private float deathTimer = 0;
     public float timeBeforeDestroy = 1.0f;
 
-    public AudioClip kickSound;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    private void Update() {
+    protected override void Update() {
+        base.Update();
         CheckCrushed();
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag == "Player") {
-            Playerbetter playerscript = other.gameObject.GetComponent<Playerbetter>();
-            Rigidbody2D rb = other.gameObject.GetComponent<Rigidbody2D>();
-
-            if (playerscript.starPower) {
-                GetComponent<AudioSource>().PlayOneShot(kickSound);
-                GetComponent<EnemyAi>().KnockAway(other.transform.position.x > transform.position.x);
-                return;
-            }
-
-            if (playerscript.powerupState == Playerbetter.PowerupState.small) {
-                if (rb.position.y - 0.2 > transform.position.y + 0.2) {
-                    playerscript.Jump();
-                    Crush();
-                } else {
-                    playerscript.damageMario();
-                }
-            } else {
-                if (rb.position.y - 0.7 > transform.position.y + 0.2) {
-                    playerscript.Jump();
-                    Crush();
-                } else {
-                    playerscript.damageMario();
-                }
-            }
-        }
+    protected override void hitByStomp(GameObject player)
+    {
+        Playerbetter playerscript = player.GetComponent<Playerbetter>();
+        playerscript.Jump();
+        Crush();
     }
 
     public void Crush () {
@@ -68,11 +39,7 @@ public class goomba : MonoBehaviour
         }
 
         state = EnemyState.crushed;
-
-        EnemyAi enemyAi = GetComponent<EnemyAi>();
-
-        //enemyAi.velocity = new Vector2(0, enemyAi.velocity.y);
-        enemyAi.stayStill = true;
+        movement = ObjectMovement.still;
 
         GetComponent<Animator>().SetBool("isCrushed", true);
 
@@ -80,7 +47,6 @@ public class goomba : MonoBehaviour
 
         shouldDie = true;
 
-        
     }
 
     void CheckCrushed () {
