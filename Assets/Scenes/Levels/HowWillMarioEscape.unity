@@ -1427,7 +1427,7 @@ PrefabInstance:
     - target: {fileID: -4370293820931447794, guid: 5d2100a586b7a480c8cf7c574d285745, type: 3}
       propertyPath: spawnItem
       value: 
-      objectReference: {fileID: 3923189068344329859, guid: 050e3b572d2291649a37e3df09c25da8, type: 3}
+      objectReference: {fileID: 3923189068344329859, guid: c324e4e0f14a26b4287fc4bec1d955fb, type: 3}
     - target: {fileID: 189388, guid: 5d2100a586b7a480c8cf7c574d285745, type: 3}
       propertyPath: m_Name
       value: QuestionBlock

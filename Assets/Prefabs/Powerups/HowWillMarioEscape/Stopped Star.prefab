@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 3923189068338313269}
   - component: {fileID: 3923189068339371681}
   - component: {fileID: 3923189068344329858}
-  - component: {fileID: 5558326467450384668}
-  - component: {fileID: 3957157135489314314}
+  - component: {fileID: 7270992964700017850}
+  - component: {fileID: 7606015245695973246}
   m_Layer: 10
-  m_Name: Fire Flower
+  m_Name: Stopped Star
   m_TagString: Powerup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 941894037
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4126401105232512474, guid: 982e3e4630d59e14f858c52e0099f487, type: 3}
+  m_Sprite: {fileID: 2936779923054452310, guid: 4145393fd0133ad45a39306349429af8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -149,8 +149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movingLeft: 1
-  velocity: {x: 0, y: 0}
-  gravity: 60
+  velocity: {x: 5, y: 0}
+  gravity: 30
   width: 1
   height: 1
   floorRaycastSpacing: 0.2
@@ -164,15 +164,35 @@ MonoBehaviour:
   checkObjectCollision: 1
   DontFallOffLedges: 0
   flipObject: 0
-  knockAwaySound: {fileID: 8300000, guid: e6aace62cc8eb244fbfcd066ed3dd315, type: 3}
+  knockAwaySound: {fileID: 0}
   objectState: 0
-  movement: 1
-  bounceHeight: 0
-  newMarioState: {fileID: 5289174382402600586, guid: 271da0c373742774ab4173946e1b47c4, type: 3}
-  powerLevel: 2
-  starTime: -1
-  starMusicOverride: {fileID: 0}
---- !u!82 &5558326467450384668
+  movement: 0
+  bounceHeight: 15
+  newMarioState: {fileID: 0}
+  powerLevel: 1
+  starTime: 5
+  starMusicOverride: {fileID: 6935973553461563371, guid: 7e94a1252ec237544805cb86138bc443, type: 3}
+--- !u!95 &7270992964700017850
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3923189068344329859}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f5330e1282d1f834f8db328a6cdb8d43, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!82 &7606015245695973246
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -268,23 +288,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &3957157135489314314
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3923189068344329859}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0fbcacdd30ede114f9aede3a08fb4313, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0

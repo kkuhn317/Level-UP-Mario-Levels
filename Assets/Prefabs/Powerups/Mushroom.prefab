@@ -147,20 +147,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e12edfdd5f310e740977a47f851bf0a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 60
+  movingLeft: 1
   velocity: {x: 3, y: 0}
-  isWalkingLeft: 1
+  gravity: 60
+  width: 1
+  height: 1
+  floorRaycastSpacing: 0.2
+  wallRaycastSpacing: 0.2
   floorMask:
     serializedVersion: 2
     m_Bits: 1
   wallMask:
     serializedVersion: 2
     m_Bits: 1
+  checkObjectCollision: 1
+  DontFallOffLedges: 0
+  flipObject: 0
+  knockAwaySound: {fileID: 0}
+  objectState: 0
+  movement: 1
+  bounceHeight: 0
   newMarioState: {fileID: 2690894693950398662, guid: 73937ea79042f654eb2ca1b2c5212025, type: 3}
   powerLevel: 1
   starTime: -1
   starMusicOverride: {fileID: 0}
-  movement: 1
 --- !u!82 &5558326467450384668
 AudioSource:
   m_ObjectHideFlags: 0
